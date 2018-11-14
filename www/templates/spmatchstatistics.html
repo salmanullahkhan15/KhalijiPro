@@ -1,0 +1,42 @@
+<ion-view view-title="{{'matchstatistic' | translate}}" class="{{myClass}}">
+<ion-nav-bar class="bar-balanced {{myClass}}">
+   <ion-nav-buttons side="left" align-title="center">
+            <button class="button button-icon icon ion-android-arrow-back" ui-sref="menuslider.menu"></button>
+          </ion-nav-buttons>
+</ion-nav-bar>
+  <ion-content class="center no-right-pad matchlist-page cus-bg-drop" style="background: url(img/bg/14.jpg) no-repeat center;background-size:cover;">
+    <div class="opacity-back"></div>
+  <div class="list card" ng-repeat="itemdaydate in matchBy | limitTo:numberOfItemsToDisplay track by $index">
+    <div ng-repeat="item in itemdaydate.match_detail"  ng-click="getPlayedMatchDetails(item.matchID)">
+      
+      <div class="match-list-row">
+         <div class="match-image pull-left">
+              <img ng-src="{{item.matchimage || 'img/photo.png'}}" class="img-circle">
+            </div>
+        <div class="match-right-detail">
+          <div class="left-inner pull-left">
+            
+        <div class="match-title">{{item.matchName}}</div>
+            <div class="match-location">{{item.matchLocation}}</div>
+            <div class="match-post-date">{{itemdaydate.dayofDate}}</div>
+            <div class="match-post-date">{{itemdaydate.matchDate}} | {{item.matchTimeHours}} : {{item.matchTimeMin}}</div>
+            </div>
+            <!-- <div class="right-inner pull-right"><button class="match-list-won-btn" href="#" value="JOIN">{{item.status}}</button></div> -->
+         <div class="right-inner pull-right"><button class="join-btn" href="#" ng-class="{'match-list-won-btn': item.matchstatus == '{{'won' | translate}}', 'button-positive': item.matchstatus == '{{'lost' | translate}}', 'button-positive': item.matchstatus == '{{'tied' | translate}}', 'notplayed-btn': item.matchstatus == '{{'notplayed' | translate}}'}">{{item.matchstatus}}</button></div>
+<div class="clearfix"></div>
+          </div>
+  <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+
+    
+  </div>
+  </div>
+<ion-infinite-scroll
+ immediate-check="false"
+ ng-if="!noMoreItemsAvailable"
+  icon="icon ion-loading-c"
+  on-infinite="addMoreItem()"  distance="5%">
+</ion-infinite-scroll>     
+  </ion-content>
+</ion-view>

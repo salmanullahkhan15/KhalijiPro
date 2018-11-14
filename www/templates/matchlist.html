@@ -1,0 +1,60 @@
+<ion-view view-title="{{'nearbymatch' | translate}}" class="{{myClass}}">
+<ion-nav-bar class="bar-balanced {{myClass}}">
+   <ion-nav-buttons side="left" align-title="center">
+            <button class="button button-icon icon ion-android-arrow-back" ui-sref="matchmenu"></button>
+          </ion-nav-buttons>
+          <ion-nav-buttons side="right">
+            <!--  <button class="button button-icon icon ion-ios-calendar-outline" ng-click="calenderfordatesearch()" ng-model="calenderfordatesearches"></button> -->
+
+             <button class="button button-icon icon ion-ios-search-strong" ng-click="showFilterBar()" ng-model="query"></button>
+             <button class="button button-icon icon ion-ios-calendar-outline"  ng-click="calenderfordatesearch()"></button>
+          </ion-nav-buttons>
+</ion-nav-bar>
+  <ion-content class="center no-right-pad matchlist-page cus-bg-drop" style="background: url(img/bg/14.jpg) no-repeat center;background-size:cover;">
+  
+  <div class="opacity-back"></div>
+  <!-- <span>test {{matchBy.length}}</span> -->
+  <div class="list card" ng-repeat="itemdaydate in matchBy | limitTo:numberOfItemsToDisplay | filter: search track by $index">
+    <div ng-repeat="item in itemdaydate.match_detail| filter: search track by $index">
+      
+      <div class="match-list-row">
+         <div class="match-image pull-left">
+              <img ng-src="{{item.images || 'img/photo.png'}}" class="img-circle">
+            </div>
+        <div class="match-right-detail">
+          <div class="left-inner pull-left">
+            <!-- <div class="match-post-date">{{itemdaydate.matchDate}}</div>
+            <div class="match-post-date">{{itemdaydate.dayofDate}}</div> -->
+          
+          
+           
+            <div class="match-title"  ng-click="getmatchdetails(item.matchID);">{{item.matchName}}</div>
+            <div class="match-location"  ng-click="getmatchdetails(item.matchID);">{{item.matchLocation}}</div>
+            <div class="match-post-date">{{item.matchTimeHours}}:{{item.matchTimeMin}}</div>
+            <div class="match-post-date">{{itemdaydate.matchDate}}, {{itemdaydate.dayofDate}}</div>
+            </div>
+            <div class="right-inner pull-right"><button href="#" ng-click="getjoinmatch(item.matchID, item.clubID1, item.clubID2);" ng-class="{'match-list-wons-btn': item.status == '{{'approvvved' | translate}}', 'match-list-joins-btn': item.status == '{{'joiin' | translate}}','match-list-pendings-btn': item.status == '{{'pendding' | translate}}'}" value="JOIN" ng-disabled="item.status == '{{'pendding' | translate}}' || item.status == '{{'approvvved' | translate}}'">{{item.status}}</button></div>
+
+          </div>
+          
+          
+
+          
+  <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+
+    
+  </div>
+  </div>
+
+
+<ion-infinite-scroll
+ immediate-check="false"
+ ng-if="!noMoreItemsAvailable"
+  icon="icon ion-loading-c"
+  on-infinite="addMoreItem()"  distance="5%">
+</ion-infinite-scroll>
+
+  </ion-content>
+</ion-view>

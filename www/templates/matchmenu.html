@@ -1,0 +1,111 @@
+<ion-view style="" id="page3" view-title="{{'match' | translate}}" class="{{myClass}}">
+    <ion-nav-bar class="bar-balanced {{myClass}}">
+        <ion-nav-buttons side="left" align-title="center">
+            <button class="button button-icon icon ion-android-arrow-back" ui-sref="menuslider.menu"></button>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-content class="center padding cus-bg-drop" style="background: url(img/bg/14.jpg) no-repeat center;background-size:cover;padding: 35px 10px 25px; ">
+        <div class="center menu-landing-page new-menu-img">
+            <div class="col-md-4 col-sm-6 col-xs-6 box-pad">
+                <!--  <a class="button button-stable button-clear" ui-sref=""><img name="matches" style="display:block;" src="img/SwqikhxBSEKhXCteqGbN_match-menu-img.png" height="100%" width="100%" ></a> -->
+                <a class="button button-stable button-clear max-height-none new-img-txt " ng-model="item.language" ng-if="item.language == 'en'"
+                    ui-sref="matchlist">
+                    <img name="matches" style="display:block;" src="img/home/nearby.png" height="100%" width="100%">
+                    <p>Nearby</p>
+                </a>
+
+                <a class="button button-stable button-clear max-height-none new-img-txt" ng-model="item.language" ng-if="item.language == 'ar'"
+                    ui-sref="matchlist">
+                    <img name="matches" style="display:block;" src="img/home/nearby.png" height="100%" width="100%">
+                    <p>قريبة مني</p>
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-6 box-pad">
+                <!--  <a class="button button-stable button-clear" ui-sref=""><img name="clubs" style="display: block; margin-left: auto;" src="img/4e9ipaBFRACfx93xnvPE_newsfeed-menu-img.png" height="100%" width="100%"></a> -->
+                <a class="button button-stable button-clear max-height-none new-img-txt" ng-model="item.language" ng-if="item.language == 'en'"
+                    ui-sref="matchslidermenu.mymatchscheduled">
+                    <img name="clubs" style="display: block; margin-left: auto;" src="img/home/status.png" height="100%" width="100%">
+                    <p>Status</p>
+                </a>
+
+                <a class="button button-stable button-clear max-height-none new-img-txt" ng-model="item.language" ng-if="item.language == 'ar'"
+                    ui-sref="matchslidermenu.mymatchscheduled">
+                    <img name="clubs" style="display: block; margin-left: auto;" src="img/home/status.png" height="100%" width="100%">
+                    <p>النتائج الحالية</p>
+                </a>
+            </div>
+
+
+            <div class="col-md-4 col-sm-6 col-xs-6 box-pad">
+                <!-- <a class="button button-stable button-clear" ui-sref=""><img name="clubs" style="display:block;" src="img/EALYnQhDQFC6d5YvtkO1_message-menu-img.png" height="100%" width="100%"></a> -->
+                <a class="button button-stable button-clear max-height-none new-img-txt" ng-model="item.language" ng-if="item.language == 'en'"
+                    ui-sref="creatematchslidermenu.orgmatchcreatematches">
+                    <img name="clubs" style="display:block;" src="img/home/create-match.png" height="100%" width="100%">
+                    <p>Create Match</p>
+                </a>
+
+                <a class="button button-stable button-clear max-height-none new-img-txt" ng-model="item.language" ng-if="item.language == 'ar'"
+                    ui-sref="creatematchslidermenu.orgmatchcreatematches">
+                    <img name="clubs" style="display:block;" src="img/home/create-match.png" height="100%" width="100%">
+                    <p>انشئ مباراة</p>
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-6 box-pad">
+                <!-- <a class="button button-stable button-clear" ui-sref=""><img name="clubs" style="display:block;" src="img/AMA8O4rJQi61vaEuHAcg_creatematch-menu-img.png" height="100%" width="100%"></a> -->
+                <a class="button button-stable button-clear max-height-none new-img-txt" ng-model="item.language" ng-if="item.language == 'en'"
+                    ui-sref="spaddresultlistmatchstatistics">
+                    <img name="clubs" style="display:block;" src="img/home/results.png" height="100%" width="100%">
+                    <p>Result</p>
+
+                </a>
+
+                <a class="button button-stable button-clear max-height-none new-img-txt" ng-model="item.language" ng-if="item.language == 'ar'"
+                    ui-sref="spaddresultlistmatchstatistics">
+                    <img name="clubs" style="display:block;" src="img/home/results.png" height="100%" width="100%">
+                    <p>النتائج</p>
+
+                </a>
+            </div>
+
+
+            <div class="col-md-4 col-sm-6 col-xs-6 box-pad">
+                <!--  <a class="button button-stable button-clear max-height-none new-img-txt" ui-sref=""><img name="clubs" style="display: block; margin-left: auto;" src="img/mcsrsCngS5iudsg4lljQ_next-match-menu-img.png" height="100%" width="100%"></a> -->
+                <a class="button button-stable button-clear max-height-none new-img-txt" ng-model="item.language" ng-if="item.language == 'en'"
+                    ui-sref="sppmatchcreateteam">
+                    <img name="clubs" style="display: block; margin-left: auto;" src="img/home/create-team.png" height="100%" width="100%">
+                    <p>Create Team</p>
+               
+                </a>
+
+                <a class="button button-stable button-clear max-height-none new-img-txt" ng-model="item.language" ng-if="item.language == 'ar'"
+                    ui-sref="sppmatchcreateteam">
+                    <img name="clubs" style="display: block; margin-left: auto;" src="img/home/create-team.png" height="100%" width="100%">
+                    <p>انشئ فريق</p>
+              
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-6 box-pad">
+                <!--  <a class="button button-stable button-clear max-height-none new-img-txt" ui-sref=""><img name="clubs" style="display: block; margin-left: auto;" src="img/mcsrsCngS5iudsg4lljQ_next-match-menu-img.png" height="100%" width="100%"></a> -->
+                <a class="button button-stable button-clear max-height-none new-img-txt" ng-model="item.language" ng-if="item.language == 'en'"
+                    ui-sref="sppmatchmyteam">
+                    <img name="clubs" style="display: block; margin-left: auto;" src="img/home/my-team.png" height="100%" width="100%">
+                    <p>My Team</p>
+              
+                </a>
+
+                <a class="button button-stable button-clear max-height-none new-img-txt" ng-model="item.language" ng-if="item.language == 'ar'"
+                    ui-sref="sppmatchmyteam">
+                    <img name="clubs" style="display: block; margin-left: auto;" src="img/home/my-team.png" height="100%" width="100%">
+                    <p>فريقي</p>
+               
+                </a>
+            </div>
+
+
+
+
+
+            <div class="clearfix"> </div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,88 @@
+<!-- /*<script>
+$(".lang-right .button-clear").click(function(e) {
+                    $(this).addClass("curr-lang").siblings().removeClass("curr-lang");
+});
+
+</script>*/ -->
+<ion-view view-title="{{'settings' | translate}}" class="{{myClass}}">
+<ion-nav-bar class="bar-balanced {{myClass}}">
+       <ion-nav-buttons side="left" align-title="center">
+            <button class="button button-icon icon ion-android-arrow-back" ui-sref="menuslider.menu"></button>
+          </ion-nav-buttons>
+</ion-nav-bar>
+   <ion-content has-header="true" ng-class="{{settingClass}}">
+      <ul class="list">
+      	<!-- <li>
+           <div class="item item-divider">
+             Settings
+           </div>
+        </li> -->
+       <!--  <li class="item item-toggle">
+        	  Enable Notifications
+           <label class="toggle toggle-balanced">
+             <input ng-model="pushNot.pushStatus" ng-click="savePushDetails();" type="checkbox">
+             <div class="track">
+               <div class="handle"></div>
+             </div>
+           </label>
+        </li> -->
+       <!--  <li class="item item-button-left" ng-click="shareArticle(AppName, AndroidAppUrl);"> -->
+       <li class="item item-button-left">
+        <!-- <div translate="lang" style="display:initial">
+            Language
+        </div> -->
+        {{'lang' | translate}}
+        <button class="button button-balanced">
+              <i class="icon ion-earth"></i>
+            </button>
+            <!-- <div side="right" class="lang-right">
+                 <a class="button button-clear" ng-click="ChangeLanguage('en')">EN</a>
+                  <a class="button button-clear" ng-click="ChangeLanguage('ar')">AR</a>
+            </div> -->
+            <select class="setting-lang" ng-model="item.language" ng-options="lang.langID as lang.langName for lang in langauges" ng-change="getLangBySelected(item.language)" ng-selected="" >
+            <!--   <option value="en" selected="true">English</option>
+              <option value="ar">Arabic</option> -->
+            </select>
+       </li>
+
+       <li class="item item-button-left" ng-click="shareArticle();">
+          	{{'shareapp' | translate}}
+          	<button class="button button-balanced">
+            	<i class="icon ion-android-share-alt"></i>
+          	</button>
+        </li>
+        <li class="item item-button-left" ng-click="rateUs()">
+				 {{'rateapp' | translate}}
+          	<button class="button button-balanced">
+            	<i class="icon ion-ios-star-outline"></i>
+          	</button>
+        </li>
+        <li class="item item-button-left" ui-sref="about">
+            {{'aboutapp' | translate}}
+            <button class="button button-balanced">
+              <i class="icon ion-information-circled"></i>
+            </button>
+        </li>
+        <li class="item item-button-left" ui-sref="contacttoadmin">
+            {{'contactadmin' | translate}}
+            <button class="button button-balanced">
+              <i class="icon icon ion-chatbubbles"></i>
+            </button>
+        </li>
+        
+       <!--  <li class="item item-button-left" ng-click="openLinkSystem('http://fb.com/google');">
+        		Follow us
+          	<button class="button button-positive">
+            	<i class="icon ion-social-facebook"></i>
+          	</button>
+        </li> -->
+       <!--  <li class="item item-button-left" ng-click="logout()">
+            Log Out
+            <button class="button button-balanced">
+              <i class="icon ion-log-out"></i>
+            </button>
+        </li> -->
+      
+      </ul>
+    </ion-content>
+</ion-view>

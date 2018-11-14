@@ -1,0 +1,56 @@
+<ion-view view-title="{{'contacttoadmin' | translate}}" class="{{myClass}}">
+<ion-nav-bar class="bar-balanced {{myClass}}">
+        <ion-nav-buttons side="left" align-title="center">
+            <button class="button button-icon icon ion-android-arrow-back" ui-sref="menuslider.menu"></button>
+          </ion-nav-buttons>
+    </ion-nav-bar>
+     <ion-content class="has-header cus-bg-drop" padding="true" style="background: url(img/bg/14.jpg) no-repeat center;background-size:cover;">
+
+     <form style="" class="ng-pristine ng-valid {{myClass}}">
+        <div class="list">
+			<div class="bar bar-header item item-input padding bar-stable custom-form-controll">
+            <label  name="Your Name" style="" ng-class="allvalidation[0].validation">
+                <input type="text"  placeholder="{{'yourname' | translate}}" class="stable ng-pristine ng-untouched ng-valid" ng-model="contacttoadmin.name">
+            </label>
+			</div>
+			<!-- <br> -->
+			<div class="bar bar-header item item-input padding bar-stable custom-form-controll">
+             <label  name="Subject" style="" ng-class="allvalidation[1].validation">
+                <input type="text" placeholder="{{'subject' | translate}}" class="stable ng-pristine ng-untouched ng-valid" ng-model="contacttoadmin.subject">
+            </label>
+			</div>
+			<!-- <br> -->
+			<div class="bar bar-header item item-input padding bar-stable custom-form-controll">
+             <label  name="Email" style="" ng-class="allvalidation[2].validation">
+                <input type="Email" placeholder="{{'email' | translate}}" class="stable ng-pristine ng-untouched ng-valid" ng-model="contacttoadmin.email">
+            </label>
+			</div>
+			<!-- <br> -->
+			 <div class="bar bar-header item item-input padding bar-stable custom-textarea-controll">
+					  <textarea rows="4" cols="50" placeholder="{{'comments' | translate}}" ng-model="contacttoadmin.description"></textarea>
+				</div>
+				
+							<!-- <br> -->
+			<!-- <div class="form-group file-input custom-file-input">
+				<div class="fileUpload">
+				<p class="custom-para">CHOOSE</p>
+				<input id="uploadBtn" type="file" class="upload" file-model="myFile"/> -->
+				<!-- <input id="uploadFile" placeholder="No File Selected" disabled="disabled" /> -->
+			<!-- 	<div class="clear"></div>
+				</div>
+			
+			</div> -->
+
+			
+			
+        </div>
+        </form>
+		
+		<button class="sent-req button button-balanced  button-block  ion-paper-airplane cus-login-btn" id="login-button1" ng-click="sendmailsubmit(contacttoadmin);"> {{'sendrequest' | translate}}</button>
+
+
+
+
+
+  </ion-content>
+</ion-view>

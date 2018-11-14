@@ -1,0 +1,20 @@
+<ion-nav-bar class="bar-stable {{myClass}}">
+     <ion-nav-back-button>
+  </ion-nav-back-button>
+</ion-nav-bar>
+ <ion-tabs class="tabs-striped tabs-top tabs-background-balanced tabs-color-light {{myClass}}" tabs-swipable>
+
+
+ <!-- Create Tab -->
+  <ion-tab title="{{'createclub' | translate}}" href="#/createeditclubslidermenu/spCreateClub">
+    <ion-nav-view name="spCreateClub"></ion-nav-view>
+  </ion-tab>
+
+
+  <!-- My Created Club Tab --> 
+  <ion-tab title="{{'mycreatedclub' | translate}}"  href="#/createeditclubslidermenu/spCreatedClubList">
+    <ion-nav-view name="spCreatedClubList"></ion-nav-view>
+  </ion-tab>
+
+ 
+</ion-tabs>

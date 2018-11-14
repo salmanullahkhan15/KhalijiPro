@@ -1,0 +1,47 @@
+      <ion-view view-title="" class="fullscreen {{myClass}}">
+      <ion-nav-bar class="bar-balanced">
+        <ion-nav-buttons side="left">
+          <a menu-close href="#/menuslider.menu"><button class="button button-clear no-animation">
+            {{'skip' | translate}}</button></a>
+        </ion-nav-buttons>
+      </ion-nav-bar class>
+       <!-- <button class="button button-clear no-animation"
+                  ng-click="next()" ng-show="slideIndex != 2">
+            Next
+          </button> -->
+        <ion-slide-box >
+          <ion-slide class="center padding" ng-repeat="image in images">
+          <img ng-src="{{image.advertPath}}" style="width:300px;height:300px;margin:auto;display:block">
+            <!-- <h3>Thank you for choosing the Awesome App!</h3>
+            <div id="logo">
+              <img src="img/Au2bBYuSAuOP60tI41un_khaliji-logo.png">
+            </div>
+            <p>
+              We've worked super hard to make you happy.
+            </p>
+            <p>
+              But if you are angry, too bad.
+            </p> -->
+          </ion-slide>
+         <!--  <ion-slide class="center padding">
+          <img src="img/walkthrough2.jpg">
+            <h3>Using Awesome</h3>
+            
+            <div id="list">
+              <h5>Just three steps:</h5>
+              <ol>
+                <li>Be awesome</li>
+                <li>Stay awesome</li>
+                <li>There is no step 3</li>
+              </ol>
+            </div>
+          </ion-slide>
+          <ion-slide class="center padding">
+          <img src="img/walkthrough3.jpg">
+            <h3>Any questions?</h3>
+            <p>
+              Too bad!
+            </p>
+          </ion-slide> -->
+        </ion-slide-box>
+      </ion-view>

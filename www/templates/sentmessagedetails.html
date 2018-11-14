@@ -1,0 +1,52 @@
+<ion-view view-title="{{'sentdetails' | translate}}" class="{{myClass}}">
+<ion-nav-bar class="bar-balanced {{myClass}}">
+   <ion-nav-buttons side="left" align-title="center">
+            <button class="button button-icon icon ion-android-arrow-back" ui-sref="messageslidermenu.sentmessage"></button>
+          </ion-nav-buttons>
+</ion-nav-bar>
+  <ion-content class="has-header message-detail-page cus-bg-drop" padding="true" style="background:url(img/bg/14.jpg) no-repeat scroll center center / cover">
+   <!--  <div class="list card">
+       <a ng-repeat="item in items">
+       <img class="item item-thumbnail-left item-avatar" ng-src="{{item.get_avatar || 'img/photo.png'}}">
+       <center><h2>{{item.messageTitle}}</h2> </center>
+        <p>Message Body : {{item.messageBody}}</p>
+        <p>Date/Time : {{item.messsageDateTime}}</p>
+     </a>
+  </div> -->
+  <div class="list card" ng-repeat="item in items">
+      <!-- <ion-item class="item-icon-right item-avatar defaultItem"> -->
+       <!-- <img class="full-image" ng-src="{{item.clubImageUrl || 'img/photo.png'}}"> -->
+       <!-- <a>
+        <img class="item item-thumbnail-left item-avatar" ng-src="{{item.get_avatar || 'img/photo.png'}}">
+        <h2>{{item.messageSenderID}}</h2>
+        <p>Date/Time : {{item.messsageDateTime}}</p>
+       <center><p>Subject : {{item.messageTitle}}</p> </center>
+        <p>Message Body : {{item.messageBody}}</p>
+        
+         <p>Sender : {{item.displayNameSenderName}}</p>
+     </a> -->
+   
+    <div class="inbox-inner-top" >
+          <span class="inbox-user-img"><img class="img-circle img-responsive" ng-src="{{item.get_avatar || 'img/photo.png'}}"></span>
+          <div class="inbox-top-right">
+            <span class="inbox-usr-name">{{item.messageTitle}}</span>
+            <span class="inbox-to-me">{{'tome' | translate}}</span>
+            <span class="inbox-msg-tm">{{'date' | translate}} <span class="inbox-msg-tm-de">{{item.messsageDateTime}}</span></span>
+          </div>
+          <div class="clearfix"></div>
+          
+          
+    </div>
+            <div class="inbox-full-msg">
+                    <p>{{item.messageBody}}</p>
+        <!-- <p>Lorem ipsum dolor sit amet, est reque lobortis et, usu no sonet vitae prodesset. Eos euripidis vituperatoribus ex, clita intellegam eam te. Per et aeque efficiendi. Vim deserunt accusata posidonium ex, idque omnium senserit nec ei.</p>
+        <p>An pro vero simul, tantas eripuit mediocrem ea nec. Sit audire mnesarchum ei, cibo equidem at sed, regione nominavi sadipscing pro eu. Quo audiam iisque oblique te, ut vix augue inciderint, mei semper assueverit id. In quo nostrum appareat, ne mollis bonorum petentium quo. An quidam quaeque eleifend per, te vidit utinam nec, iusto accumsan scripserit cu eam. Alienum sensibus ex sea.</p>
+        <p>Eam quot doctus no, an erant paulo sit. Ex vis tibique concludaturque, ut eum porro erant, ei ius deserunt corrumpit. Incorrupte inciderint ut eos, cibo clita integre an sit. Vix ei nostro expetenda, vis probo minimum ne. Vim quando altera urbanitas ex, at accumsan assentior abhorreant vim.</p>        -->   
+                  </div>
+                 <!--  <div class="inner-footer">
+                  <span class="attach-icon"><img src="img/doc-ic.png"></span>
+                  <span class="attach-file-neme">Lorem ipsum dolor sit amet.doc</span>
+                  </div> -->
+  </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,39 @@
+<ion-view style="" title="{{'twitteremailcity' | translate}}" class="login-bg {{myClass}}">
+<ion-nav-bar class="bar-balanced {{myClass}}">
+        <ion-nav-buttons side="left" align-title="center">
+            <button class="button button-icon icon ion-android-arrow-back" ng-click="gobackcheck()"></button>
+          </ion-nav-buttons>
+    </ion-nav-buttons>
+</ion-nav-bar>
+    <ion-content padding="true" style="background: url(img/bg/14.jpg) no-repeat center;background-size:cover;" class="cus-bg-drop manual-ios-statusbar-padding">
+        <form style="" class="{{myClass}}">
+        <div class="list">
+			<!-- <div class="bar bar-header item item-input padding bar-stable">
+            <i class="icon ion-ios-person-outline padding stable"></i>
+            <label style="" name="nameUsername"ng-class="allvalidation[0].validation">
+                <input class="stable" placeholder="Enter Email" type="text" ng-model="twitter.email">
+            </label>
+			</div> -->
+
+            <div class="bar bar-header item item-input padding bar-stable custom-form-controll">
+            <i class="icon ion-ios-person-outline padding stable"></i>
+            <label style="" name="nameUsername"ng-class="allvalidation[0].validation">
+                <input class="stable" placeholder="{{'emaiaddr' | translate}}" type="email" ng-model="twitter.email">
+            </label>
+            </div>
+
+			<br>
+            <div class="bar bar-header item item-input padding bar-stable custom-select-box">           
+            <label style="" name="nameCity" class="item item-input item-select" ng-class="allvalidation[1].validation">
+              <!--  <select ng-model="twitter.citydata" ng-options="catcity.city_id as catcity.city_name for catcity in citycategories"> 
+                 <option value="">Select City</option> -->
+                 <select ng-model="selectedItem_city" ng-options="citycategories_duplicate.indexOf(selectedItem_city) as selectedItem_city for selectedItem_city in citycategories_duplicate" ng-change="selectedvalue_citydup(selectedItem_city)">
+                    <option value="">{{'selectcity' | translate}}</option>
+                </select>
+            </label>
+            </div>
+        </div>
+        </form>
+        <button class="button button-balanced  button-block ion-checkmark" id="login-button1" ng-click="twitteremailandcity(twitter);">{{'submitt' | translate}}</a>
+    </ion-content>
+</ion-view>

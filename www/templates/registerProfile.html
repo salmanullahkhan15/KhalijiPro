@@ -1,0 +1,335 @@
+<ion-view view-title="{{'myprofile' | translate}}" class="{{myClass}}">
+    <ion-nav-bar class="bar-balanced {{myClass}}">
+        <ion-nav-buttons side="left" align-title="center">
+            <button class="button button-icon icon ion-android-arrow-back" ng-click="gobackcheck()"></button>
+        </ion-nav-buttons>
+        <ion-nav-buttons side="right">
+            <button class="profile-edit button button-edit ion-edit center" ng-click="changeedit(true)" ng-show="edit==false;"></button>
+            <button class="profile-done button button-edit ion-checkmark center" ng-click="saveProfile();" ng-show="edit==true;"></button>
+            <!--  <button class="button button-positive button-edit button-round ion-edit" ng-click="changeedit(true)" ng-show="edit==false;"></button>
+     <button class="button button-positive button-edit button-round ion-close" ng-click="changeedit(false)" ng-show="edit==true;"></button> -->
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-content class="center padding cus-bg-drop" style="background: url(img/bg/14.jpg) no-repeat center;background-size:cover;">
+        <div ng-if="edit==false;">
+            <div style="margin: 0 auto; width:100px" class="profile-image reg-pro">
+                <img class="profile-img" ng-src="{{ item.avatar || 'img/photo.png'}}"></img>
+            </div>
+
+            <form style="margin-bottom: 50px;" class="list register-usr-profile">
+                <!--  <div>
+                    <div style="margin: 0 auto; width:100px">
+                    <img class="profile-img button button-dark button-small dark-transparent w-full" ng-click="picFromGallery()" ng-if="edit==true;" ng-src="{{item.clubImageUrl || 'img/photo.png'}}"></img>
+                    </div> -->
+                <!--   <label class="item item-input"> -->
+                <div class="profile-detail">
+                    <div>
+                        <span class="usr-name-txt">{{item.first_name}}</span>
+                        <!--  <input type="text" placeholder="Name" ng-model="item.first_name">
+                        </label> -->
+                        <span class="usr-name-txt">{{item.last_name}}</span>
+                    </div>
+                    <div>
+                        <span class="usr-cou-city">
+                            <img src="img/location-icon.png">{{item.citycategories}},{{item.countrycategories}}</span>
+                    </div>
+                    <div>
+                        <span class="usr-cou-city">{{item.user_email}}</span>
+                    </div>
+                </div>
+
+                <div class="profile-loc-detail">
+                    <div class="left-detail col-md-6 col-xs-6 col-sm-6">
+                        <div class="mb-10">
+                            <span class="loc-detail-label col-md-6 col-sm-6 pl-0">{{'nationality' | translate}}</span>
+                            <span class="loc-detail-txt">{{item.Nationality}}</span>
+                        </div>
+                        <div class="">
+                            <span class="loc-detail-label col-md-6 col-sm-6 pl-0">{{'favpostion' | translate}} </span>
+                            <span class="loc-detail-txt">{{item.Member_favourite_position}}</span>
+                        </div>
+                    </div>
+
+                    <div class="right-detail col-md-6 col-xs-6 col-sm-6">
+                        <div class="mb-10">
+                            <span class="loc-detail-label col-md-6 col-sm-6 pl-0">{{'dob' | translate}}</span>
+                            <span class="loc-detail-txt">{{item.Date_of_Birth_display | date: "dd-MM-yyyy"}}</span>
+                        </div>
+                        <div class="">
+                            <span class="loc-detail-label col-md-6 col-sm-6 pl-0">{{'favclub' | translate}}</span>
+                            <span class="loc-detail-txt">{{item.Member_favourite_team}}</span>
+                        </div>
+                    </div>
+                    <div class="clearfix"> </div>
+                    <div class="left-detail col-md-6 col-xs-6 col-sm-6 mt-10">
+                        <div class="mb-10">
+                            <span class="loc-detail-label col-md-6 col-sm-6 pl-0">{{'phonenumber' | translate}}</span>
+                            <span class="loc-detail-txt">{{item.Member_mobile_no}}</span>
+                        </div>
+                    </div>
+
+                    <div class="clearfix"> </div>
+                </div>
+
+                <div class="usr-description">
+                    <div class="dec-title col-xs-12 col-sm-12">{{'desc' | translate}}</div>
+                    <div class="dec-paragraph col-xs-12 col-sm-12">{{item.Member_description}}</div>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="usr-condition">
+                    <div class="dec-title  col-xs-12 col-sm-12">{{'condition' | translate}}</div>
+                    <div class="dec-paragraph  col-xs-12 col-sm-12">{{item.Member_condition}}</div>
+                    <div class="clearfix"> </div>
+                </div>
+
+
+                <!-- Animesh Current Change -->
+                <div class="usr-condition notification-condition">
+                    <div class="dec-title col-xs-12 col-sm-12">Notification</div>
+                    <!-- <div class="dec-paragraph col-xs-12 col-sm-12">{{item.Member_description}}</div> -->
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="profile-loc-detail chcked-notification">
+                    <div class="left-detail col-md-6 col-xs-6 col-sm-6">
+                        <div class="mb-10">
+                            <!-- <span class="loc-detail-label col-md-6 col-sm-6 pl-0">{{'nationality' | translate}}</span> -->
+
+                            <input type="checkbox" name="your-group" checked ng-if="item.JM" ng-disabled="true" />
+                            <input type="checkbox" name="your-group" ng-if="!item.JM" ng-disabled="true" />
+                            <span class="loc-detail-txt">Join Match</span>
+                        </div>
+                        <div class="mb-10">
+
+                            <input type="checkbox" name="your-group" checked ng-if="item.AM" ng-disabled="true" />
+                            <input type="checkbox" name="your-group" ng-if="!item.AM" ng-disabled="true" />
+                            <span class="loc-detail-txt">Approve Match</span>
+                        </div>
+                        <div class="mb-10">
+
+                            <input type="checkbox" name="your-group" checked ng-if="item.EC" ng-disabled="true" />
+                            <input type="checkbox" name="your-group" ng-if="!item.EC" ng-disabled="true" />
+                            <span class="loc-detail-txt">Edit Club</span>
+                        </div>
+                    </div>
+
+                    <div class="right-detail col-md-6 col-xs-6 col-sm-6">
+                        <div class="mb-10">
+                            <input type="checkbox" name="your-group" checked ng-if="item.EM" ng-disabled="true" />
+                            <input type="checkbox" name="your-group" ng-if="!item.EM" ng-disabled="true" />
+                            <span class="loc-detail-txt">Edit Match</span>
+                        </div>
+                        <div class="mb-10">
+                            <input type="checkbox" name="your-group" checked ng-if="item.JC" ng-disabled="true" />
+                            <input type="checkbox" name="your-group" ng-if="!item.JC" ng-disabled="true" />
+                            <span class="loc-detail-txt">Join Club</span>
+                        </div>
+                        <div class="mb-10">
+
+                            <input type="checkbox" name="your-group" checked ng-if="item.AC" ng-disabled="true" />
+                            <input type="checkbox" name="your-group" ng-if="!item.AC" ng-disabled="true" />
+                            <span class="loc-detail-txt">Approve Club</span>
+                        </div>
+                    </div>
+                    <div class="clearfix"> </div>
+                    <div class="left-detail col-md-6 col-xs-6 col-sm-6 mt-10">
+
+                    </div>
+
+                    <div class="clearfix"> </div>
+                </div>
+
+
+
+
+                <div class="clearfix"> </div>
+
+
+            </form>
+        </div>
+        <div ng-if="edit==true;">
+            <form style="" class="list {{myClass}}">
+                <div class="cutom-color-new">
+                    <div style="margin: 0 auto; width:100px" class="edit-profile-img">
+                        <img class="profile-img button button-dark button-small dark-transparent w-full" onerror="alert(this.src);" ng-click="addImage()"
+                            ng-if="edit==true;" ng-src="{{ item.avatar || 'img/photo.png'}}" id="myImage"></img>
+                    </div>
+
+                    <div class="bar bar-header item item-input padding bar-stable custom-form-controll">
+
+                        <label name="firstname" ng-class="allvalidation[0].validation">
+                            <span style="color: rgba(255,255,255,0.5);">{{item.user_login}}</span>
+                        </label>
+                    </div>
+                    <!-- <br> -->
+                    <div class="bar bar-header item item-input padding bar-stable custom-form-controll">
+
+                        <label style="" name="firstname" ng-class="allvalidation[0].validation">
+                            <input type="text" placeholder="{{'firstname' | translate}}" ng-model="item.first_name">
+                        </label>
+                    </div>
+                    <!-- <br> -->
+                    <div class="bar bar-header item item-input padding bar-stable custom-form-controll">
+
+                        <label style="" name="lastname" ng-class="allvalidation[0].validation">
+                            <input type="text" placeholder="{{'lastname' | translate}}" ng-model="item.last_name">
+                        </label>
+                    </div>
+                    <!-- <br> -->
+                    <div class="bar bar-header item item-input padding bar-stable custom-select-box">
+                        <label style="" name="Country" class="item item-input item-select select-arrow-none">
+                            <!-- <select class="pl-0" ng-model="item.countrycategories" ng-options="catcountry.countryID as  catcountry.countryName for catcountry in countrycategories" ng-change="GetselectedCountry()"> 
+                         <option value="">Select Country</option>
+                        <!--  <option value=''>{{item.countrycategories}}</option> -->
+                            <!--   </select> -->
+                            <!--  </label>
+ -->
+                            <select style="font-weight:bold; color: rgba(255,255,255,0.5);" ng-model="selectedItem_country" ng-options="countrycategories_duplicate.indexOf(selectedItem_country) as selectedItem_country for selectedItem_country in countrycategories_duplicate"
+                                ng-change="selectedvalue_countrydup(selectedItem_country)" ng-disabled="disableCountry" ng-init="disableCountry=true">
+                                <option value="">{{'selectcountry' | translate}}</option>
+                            </select>
+                        </label>
+
+
+                    </div>
+                    <!-- <br> -->
+                    <div class="bar bar-header item item-input padding bar-stable custom-select-box">
+                        <label style="" name="nameCity" class="item item-input item-select  select-arrow-none" ng-class="allvalidation[2].validation">
+                            <!-- <select class="pl-0" ng-model="item.citycategories" placeholder="Select City" ng-options="catcity.city_id as catcity.city_name for catcity in citycategories" ng-change="GetselectedCity()"> 
+                     <option value="">Select City</option>
+                      </select>    -->
+
+                            <select ng-model="selectedItem_city" ng-options="citycategories_duplicate.indexOf(selectedItem_city) as selectedItem_city for selectedItem_city in citycategories_duplicate"
+                                ng-change="selectedvalue_citydup(selectedItem_city)">
+                                <option value="">{{'selectcity' | translate}}</option>
+                            </select>
+
+                        </label>
+                    </div>
+                    <!-- <br> -->
+                    <div class="bar bar-header item item-input padding bar-stable custom-form-controll">
+
+                        <label style="" name="nationality" ng-class="allvalidation[0].validation">
+                            <input type="text" placeholder="{{'nationality' | translate}}" ng-model="item.Nationality">
+                        </label>
+                    </div>
+                    <!-- <br> -->
+                    <div class="bar bar-header item item-input padding bar-stable custom-form-controll">
+
+                        <label style="" name="DateofBirth" ng-class="allvalidation[0].validation">
+                            <!--  <input type="date" id="sampleInput" ng-model="item.Date_of_Birth" class="placeholderclass ver-top-align"  onClick="$(this).removeClass('placeholderclass')" name="input" placeholder="Date Of Birth"> -->
+                            <!--  <input type="date" id="sampleInput" ng-model="item.Date_of_Birth" name="input" placeholder="Date Of Birth" value="{{item.Date_of_Birth | date: 'dd-MM-yyyy'}}"> -->
+
+                            <input placeholder="{{'dob' | translate}}" class="textbox-n" type="text" onfocus="(this.type='date')" ng-model="item.Date_of_Birth"
+                                id="date">
+
+                            <!--  <input placeholder="Date Of Birth" class="textbox-n" type="text" onfocus="(this.type='date')" ng-model="item.Date_of_Birth" id="date"> -->
+                        </label>
+                        </label>
+                    </div>
+                    <!-- <br> -->
+                    <div class="bar bar-header item item-input padding bar-stable custom-select-box">
+                        <label style="" name="Favouriteclub" class="item item-input item-select" ng-class="allvalidation[2].validation">
+                            <!--  <select class="pl-0" ng-model="item.Member_favourite_team" ng-options="catclub.clubID as catclub.clubName for catclub in Member_favourite_team" placeholder="Favourite Club" ng-disabled="!item.citycategories"> 
+                   <option value="">{{item.Member_favourite_team}}</option>
+                </select> -->
+
+                            <select ng-model="selectedItem_club" ng-options="clubcategories_duplicate.indexOf(selectedItem_club) as selectedItem_club for selectedItem_club in clubcategories_duplicate"
+                                ng-change="selectedvalue_clubdup(selectedItem_club)">
+                                <option value="">{{'selectfavclub' | translate}}</option>
+                            </select>
+
+
+
+                        </label>
+                    </div>
+                    <!-- <br> -->
+                    <div class="bar bar-header item item-input padding bar-stable custom-select-box">
+                        <label style="" name="FavouritePosition" class="item item-input item-select" ng-class="allvalidation[2].validation">
+                            <!--  <select class="pl-0" ng-model="item.Member_favourite_position" ng-options="favpos.id as favpos.Member_favourite_position for favpos in Member_favourite_position"> 
+                   <option style="display:none" value="">Select Favourite Position</option>
+                </select> -->
+                            <select ng-model="selectedItem_position" ng-options="positioncategories_duplicate.indexOf(selectedItem_position) as selectedItem_position for selectedItem_position in positioncategories_duplicate"
+                                ng-change="selectedvalue_positiondup(selectedItem_position)">
+                                <option value="">{{'selectfavpostion' | translate}}</option>
+                            </select>
+
+                        </label>
+                    </div>
+                    <!-- <br> -->
+                    <div class="bar bar-header item item-input padding bar-stable custom-form-controll">
+
+                        <label name="email" ng-class="allvalidation[0].validation">
+                            <span style="color: rgba(255,255,255,0.5);">{{item.user_email}}</span>
+                        </label>
+                    </div>
+                    <!-- <br> -->
+                    <div class="bar bar-header item item-input padding bar-stable custom-form-controll">
+
+                        <label style="" name="mobile" ng-class="allvalidation[0].validation">
+                            <input type="tel" placeholder="{{'phonenumber' | translate}}" ng-model="item.user_mobile">
+                        </label>
+                    </div>
+                    <!-- <br> -->
+                    <div class="bar bar-header item item-input padding bar-stable custom-textarea-controll">
+                        <textarea rows="4" cols="50" placeholder="{{'desc' | translate}}" ng-model="item.Member_description"></textarea>
+                    </div>
+                    <!-- <br> -->
+                    <div class="bar bar-header item item-input padding bar-stable custom-textarea-controll">
+                        <textarea rows="4" cols="50" placeholder="{{'condition' | translate}}" ng-model="item.Member_condition"></textarea>
+                    </div>
+
+                    <div class="profile-loc-detail edit-chcked-notification">
+                        <div class="left-detail col-md-6 col-xs-6 col-sm-6">
+                            <div class="mb-10">
+                                <!-- <span class="loc-detail-label col-md-6 col-sm-6 pl-0">{{'nationality' | translate}}</span> -->
+                                <input type="checkbox" name="your-group" checked ng-if="item.JM" ng-model="item.JM" />
+                                <input type="checkbox" name="your-group" ng-if="!item.JM" ng-model="item.JM" />
+                                <span class="loc-detail-txt">Join Match</span>
+                            </div>
+                            <div class="mb-10">
+                                <input type="checkbox" name="your-group" checked ng-if="item.AM" ng-model="item.AM" />
+                                <input type="checkbox" name="your-group" ng-if="!item.AM" ng-model="item.AM" />
+                                <span class="loc-detail-txt">Approve Match</span>
+                            </div>
+                            <div class="mb-10">
+                                <input type="checkbox" name="your-group" checked ng-if="item.EC" ng-model="item.EC" />
+                                <input type="checkbox" name="your-group" ng-if="!item.EC" ng-model="item.EC" />
+                                <span class="loc-detail-txt">Edit Club</span>
+                            </div>
+                        </div>
+
+
+                        <div class="right-detail col-md-6 col-xs-6 col-sm-6">
+                            <div class="mb-10">
+                                <input type="checkbox" name="your-group" checked ng-if="item.EM" ng-model="item.EM" />
+                                <input type="checkbox" name="your-group" ng-if="!item.EM" ng-model="item.EM" />
+                                <span class="loc-detail-txt">Edit Match</span>
+                            </div>
+                            <div class="mb-10">
+                                <input type="checkbox" name="your-group" checked ng-if="item.JC" ng-model="item.JC" />
+                                <input type="checkbox" name="your-group" ng-if="!item.JC" ng-model="item.JC" />
+                                <span class="loc-detail-txt">Join Club</span>
+                            </div>
+                            <div class="mb-10">
+                                <input type="checkbox" name="your-group" checked ng-if="item.AC" ng-model="item.AC" />
+                                <input type="checkbox" name="your-group" ng-if="!item.AC" ng-model="item.AC" />
+                                <span class="loc-detail-txt">Approve Club</span>
+                            </div>
+                        </div>
+                        <div class="clearfix"> </div>
+                        <div class="left-detail col-md-6 col-xs-6 col-sm-6 mt-10">
+
+                        </div>
+
+                        <div class="clearfix"> </div>
+                    </div>
+
+
+                    <!-- <label class="item item-input">
+                    <span class="input-label"><i class="icon ln-calendar2"></i></span>
+                    <input type="date" placeholder="Birth Date" ng-model="user.dob">
+                </label> -->
+            </form>
+            </div>
+    </ion-content>
+</ion-view>

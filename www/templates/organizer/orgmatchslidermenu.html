@@ -1,0 +1,24 @@
+ <ion-nav-bar class="bar-stable">
+     <ion-nav-back-button>
+  </ion-nav-back-button>
+</ion-nav-bar>
+ <ion-tabs class="tabs-striped tabs-top tabs-background-balanced tabs-color-light" tabs-swipable>
+
+
+ <!-- NEAR BY Tab -->
+  <ion-tab title="NEAR BY ({{spcountnearby.itemCount || 0}})"href="#/orgmatchslidermenu/orgmatchlist">
+    <ion-nav-view name="orgmatchlist"></ion-nav-view>
+  </ion-tab>
+
+  <!-- CREATE Tab -->
+  <ion-tab title="CREATE MATCH" href="#/orgmatchslidermenu/orgmatchcreatematch">
+    <ion-nav-view name="orgmatchcreatematch"></ion-nav-view>
+  </ion-tab>
+
+   <!-- MY MATCH Tab -->
+  <ion-tab title="MY MATCH" href="#/orgmatchslidermenu/orgmatchmymatch">
+    <ion-nav-view name="orgmatchmymatch"></ion-nav-view>
+  </ion-tab>
+
+ 
+</ion-tabs>

@@ -1,0 +1,74 @@
+<ion-view view-title="{{'searchby' | translate}}" class="{{myClass}}">
+<ion-nav-bar class="bar-balanced {{myClass}}">
+   <ion-nav-buttons side="left" align-title="center">
+            <button class="button button-icon icon ion-android-arrow-back" ui-sref="clubmenu"></button>
+            </ion-nav-buttons>
+             <ion-nav-buttons side="right">
+             <button class="button button-icon icon ion-ios-search-strong" ng-click="showFilterBar()"></button>
+          </ion-nav-buttons>
+   <!-- <ion-nav-buttons side="right">
+            <button class="button button-icon icon ion-search" ui-sref="menuslider.menu"></button>
+    </ion-nav-buttons> -->
+          
+</ion-nav-bar>
+  <ion-content class="center padding no-right-pad matchlist-page cus-bg-drop" style="background: url(img/bg/14.jpg) no-repeat center;background-size:cover;">
+  <div class="member-list-top-de" style="background: white;margin: 5px;padding: 5px;border-radius: 4px;">{{'clubinyoarea' | translate}} : {{item.city}}</div>
+  <br>
+  <div class="bar bar-header item item-input padding bar-stable custom-select-box fixed-top-drop">           
+            <label style="" name="matchclub1" class="item item-input item-select" ng-class="allvalidation[2].validation">
+                 <select ng-model="item.orderby" ng-options="orders.orderID as orders.orderName for orders in orderses" ng-change="getOrderBySelected()" ng-selected="">
+                    <!--   <option value=""></option> -->
+                      <!-- <option value='most followers'>Most Followers</option>
+                      <option value='most members'>Most Members</option>
+                      <option value='name'>Sort By Name</option> -->
+               </select>
+                <!--    <select ng-model="clubs1" ng-options="clubs.clubID as clubs.clubName for clubs in clubses"  ng-change="selected_name=(clubses|filter:{clubID:clubs1})[0].clubName"><option value=''>Select Club I</option>
+               </select> -->
+            </label>
+            </div>
+   <div class="clearfix"></div>
+   <div class="club-srchby">
+ <div class="list card" ng-repeat="item in items">
+    <div class="member-list-box">
+      <div class="member-list-top-de">
+        <span class="member-list-left"><img ng-src="http://www.khalijipro.com/wp-content/plugins/attune/images/club/{{item.clubImageUrl || 'img/photo.png'}}" class="img-circle img-responsive"></span>
+        <div class="member-list-right-de">
+          <span class="member-usr-name">{{item.clubName}}</span>
+        </div>
+        <span class="member-de-label" style="float: left;padding-right: 5px;margin: 2px 0 0 0;">{{'members' | translate}} : </span>
+          <span class="member-bold-txt" style="text-align: left;">{{item.clubMemberCount}}</span>
+          <span class="member-bold-txt" style="text-align: center;
+    color: red;margin: -30px 24px 0 0px;background: #c7c7c7;min-width:8%;float: right;height: auto;
+    border-radius: 50% 50%;padding: 5px !important;font-size: 12px;">{{$index + 1}}</span>
+          <!-- <span class="member-location">Members : <span class="clb-bld-fnt">{{item.clubMemberCount}}</span></span> -->
+        <div class="clearfix"></div>
+      </div>
+      <div class="member-list-bottom-de">
+        <div class="col-md-3 col-sm-3 col-xs-3">
+          <span class="member-de-label">{{'playedmatch' | translate}}</span>
+          <span class="member-bold-txt">{{item.playedMatchCount}}</span>
+        </div>
+        
+        <div class="col-md-3 col-sm-3 col-xs-3">
+          <span class="member-de-label">{{'won' | translate}}</span>
+          <span class="member-bold-txt">{{item.wonMatchCount}}</span>
+        </div>
+        
+        <div class="col-md-3 col-sm-3 col-xs-3">
+          <span class="member-de-label">{{'tied' | translate}}</span>
+          <span class="member-bold-txt">{{item.tieMatchCount}}</span>
+        </div>
+
+        <div class="col-md-3 col-sm-3 col-xs-3">
+          <span class="member-de-label">{{'lost' | translate}}</span>
+          <span class="member-bold-txt">{{item.lostMatchCount}}</span>
+        </div>
+        
+      <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  </ion-content>
+</ion-view>

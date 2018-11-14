@@ -1,0 +1,24 @@
+ <ion-nav-bar class="bar-stable">
+     <ion-nav-back-button>
+  </ion-nav-back-button>
+</ion-nav-bar>
+ <ion-tabs class="tabs-striped tabs-top tabs-background-balanced tabs-color-light" tabs-swipable>
+
+
+ <!-- NEAR BY Tab -->
+  <ion-tab title="NEAR BY ({{spcountnearby.itemCount || 0}})"href="#/spmatchslidermenu/spmatchlist">
+    <ion-nav-view name="spmatchlist"></ion-nav-view>
+  </ion-tab>
+
+ <!-- MY TEAM Tab -->
+  <ion-tab title="MY TEAM" href="#/spmatchslidermenu/spmatchmyteam">
+    <ion-nav-view name="spmatchmyteam"></ion-nav-view>
+  </ion-tab>
+
+  <!-- CREATE Tab -->
+  <ion-tab title="CREATE TEAM" href="#/spmatchslidermenu/spmatchcreateteam">
+    <ion-nav-view name="spmatchcreateteam"></ion-nav-view>
+  </ion-tab>
+
+ 
+</ion-tabs>

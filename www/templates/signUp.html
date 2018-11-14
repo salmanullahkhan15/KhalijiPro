@@ -1,0 +1,127 @@
+<ion-view style="" id="page4" title="{{'signuup' | translate}}" class="login-bg {{myClass}}">
+    <ion-nav-bar class="bar-balanced {{myClass}}">
+        <ion-nav-back-button ui-sref="login"></ion-nav-back-button>
+        <ion-nav-buttons side="right">
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-content class="has-header cus-bg-drop cus-bg-drop" padding="true" style="background: url(img/bg/14.jpg) no-repeat center;background-size:cover;">
+        <!-- <div>
+            <img style="display: block; margin-left: auto; margin-right: auto;" src="img/Au2bBYuSAuOP60tI41un_khaliji-logo.png" height="50%" width="50%">
+        </div>
+    </br> -->
+        <form style="" class="list {{myClass}}" name="signupform">
+            <div class="bar bar-header item item-input padding bar-stable custom-form-controll">
+                <i class="icon ion-ios-person-outline padding stable"></i>
+                <label style="" name="nameUsername" class="item item-input" ng-class="allvalidation[0].validation">
+                    <!-- <span class="input-label">Username</span> -->
+                    <input placeholder="{{'usernaame' | translate}}" type="text" ng-model="signup.username">
+                </label>
+            </div>
+            <!-- <br> -->
+
+            <div class="bar bar-header item item-input padding bar-stable custom-form-controll">
+                <i class="icon ion-ios-unlocked-outline padding stable"></i>
+                <label style="" name="password" class="item item-input" ng-class="allvalidation[1].validation">
+                    <!-- <span class="input-label">Username</span> -->
+                    <input name="password" placeholder="{{'paassword' | translate}}" type="password" ng-model="signup.password">
+                </label>
+            </div>
+            <!-- <br> -->
+
+            <div class="bar bar-header item item-input padding bar-stable custom-form-controll">
+                <i class="icon ion-ios-unlocked-outline padding stable"></i>
+                <label style="" name="confirmpassword" class="item item-input" ng-class="allvalidation[2].validation">
+                    <!-- <span class="input-label">Username</span> -->
+                    <input name="confirmpassword" placeholder="{{'cnfpassword' | translate}}" type="password" ng-model="signup.confirmpassword">
+                </label>
+            </div>
+            <!-- <br> -->
+            <!--   <div class="bar bar-header item item-input padding bar-stable custom-select-box">           
+            <label style="" name="roleType" class="item item-input item-select" ng-class="allvalidation[3].validation">
+               <select ng-model="signup.roletypedata"> 
+                    <option value="">Select Role</option>
+                    <option >Player</option>
+                    <option >Supervisor</option>
+                    <option>Organizer</option>
+               </select>
+            </label>
+            </div>
+            <br> -->
+            <div class="bar bar-header item item-input padding bar-stable custom-form-controll">
+                <i class="icon ion-ios-person-outline padding stable"></i>
+                <label style="" name="firstName" class="item item-input" ng-class="allvalidation[0].validation">
+                    <!-- <span class="input-label">Username</span> -->
+                    <input placeholder="{{'firstname' | translate}}" type="text" ng-model="signup.firstname">
+                </label>
+            </div>
+            <!-- <br> -->
+
+            <div class="bar bar-header item item-input padding bar-stable custom-form-controll">
+                <i class="icon ion-ios-person-outline padding stable"></i>
+                <label style="" name="lastName" class="item item-input" ng-class="allvalidation[0].validation">
+                    <!-- <span class="input-label">Username</span> -->
+                    <input placeholder="{{'lastname' | translate}}" type="text" ng-model="signup.lastname">
+                </label>
+            </div>
+            <!-- <br> -->
+
+            <div class="bar bar-header item item-input padding bar-stable custom-form-controll">
+                <i class="icon ion-iphone padding stable cus-mr"></i>
+                <label style="" name="namePoneNumber" class="item item-input" ng-class="allvalidation[3].validation">
+                    <!-- <span class="input-label">Email</span> -->
+                    <input placeholder="{{'phonenumber' | translate}}" type="tel" ng-model="signup.phonenumber">
+                </label>
+            </div>
+            <!-- <br> -->
+
+            <div class="bar bar-header item item-input padding bar-stable custom-form-controll">
+                <i class="icon ion-ios-email-outline padding stable"></i>
+                <label style="" name="nameEmailAddress" class="item item-input" ng-class="allvalidation[4].validation">
+                    <!-- <span class="input-label">Email</span> -->
+                    <input placeholder="{{'emaiaddr' | translate}}" type="email" ng-model="signup.email">
+                </label>
+            </div>
+            <!-- <br> -->
+
+            <!-- <label style="" name="nameDisplayName" class="item item-input" ng-class="allvalidation[2].validation">
+                <!-- <span class="input-label">Display Name</span> -->
+            <!--  <input placeholder="Display Name" type="text" ng-model="signup.displayname">
+            </label>  -->
+            <!-- <div class="bar bar-header item item-input padding bar-stable custom-form-controll">
+            <i class="icon ion-ios-monitor-outline padding stable"></i>
+            <label style="" name="nameDisplayName" class="item item-input" ng-class="allvalidation[4].validation">
+                <input placeholder="Display Name" type="text" ng-model="signup.displayname">
+            </label>  
+             </div>
+             <br> -->
+
+            <div class="bar bar-header item item-input padding bar-stable custom-select-box">
+                <label style="" name="nameCity" class="item item-input item-select" ng-class="allvalidation[5].validation">
+                    <!-- <span class="input-label">City</span> -->
+                    <select ng-model="signup.citydata" ng-options="catcity.city_id as catcity.city_name for catcity in citycategories">
+                        <!-- <select ng-model="signup.citydata" ng-options="catcity.city for catcity in citycategories"> -->
+                        <!--   "item.Id as item.Name for item in testAccounts" -->
+                        <!--   <select name="show-filter" ng-model="catFilter" ng-options="category.title for category in ourTeamCategories">  -->
+                        <option value="">{{'selectcity' | translate}}</option>
+                        <!--     <option selected>Default</option>
+        <option >Surat</option>
+        <option>Ahmedabad</option>
+         <option>Rajkot</option> -->
+                    </select>
+                </label>
+            </div>
+            <!-- </br> -->
+            <div class="policyfancy-chkbox-btn">
+
+                <input type="checkbox" name="policy" ng-model="signup.policy" value="policy" id="policy">
+
+                <button class="button button-light button-small button-block button-clear sign-up-txt" ui-sref="termsandcondition">{{'iagreewithe' | translate}}
+                    <span>{{'termsancondi' | translate}}</span>
+                </button>
+
+            </div>
+        </form>
+        <button class="cus-login-btn button button-balanced  button-block icon ion-ios-personadd-outline" id="signUp-button6" ng-click="signupsubmit(signup);">{{'createacccount' | translate}}</button>
+
+    </ion-content>
+</ion-view>

@@ -1,0 +1,47 @@
+<ion-view view-title="Supervisor Member Approval">
+<ion-nav-bar class="bar-balanced">
+   <ion-nav-buttons side="left" align-title="center">
+            <button class="button button-icon icon ion-android-arrow-back" ui-sref="supervisormenuslider.supervisormenu"></button>
+          </ion-nav-buttons>
+</ion-nav-bar>
+  <ion-content class="center padding no-right-pad matchlist-page cus-bg-drop" style="background: url(img/bg/14.jpg) no-repeat center;background-size:cover;">
+
+ <div class="list card" ng-repeat="item in items">
+    <div class="member-list-box">
+      <div class="member-list-top-de">
+        <span class="member-list-left"><img ng-src="{{item.avatar || 'img/photo.png'}}" class="img-circle img-responsive"></span>
+        <div class="member-list-right-de">
+          <span class="member-usr-name">{{item.nickname}}</span>
+          <span class="member-location">{{item.City}}</span>
+          <span class="member-location">{{item.getDataClubName}}</span>
+           <span class="member-list-right"><button class="join-btn" href="#" ng-click="getApproveButton(item.getUserID, item.getClubID);" ng-class="{'button-positive': item.Approved == 'Approve','pending-btn': item.Approved == 'Pending Approval'}"value="Approve">{{item.Approved}}</button></span>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <div class="member-list-bottom-de">
+        <div class="col-md-3 col-sm-3 col-xs-3">
+          <span class="member-de-label">Played</span>
+          <span class="member-bold-txt">{{item.getPlayersPlayed}}</span>
+        </div>
+        
+        <div class="col-md-3 col-sm-3 col-xs-3">
+          <span class="member-de-label">Won</span>
+          <span class="member-bold-txt">{{item.getPlayerswon}}</span>
+        </div>
+        
+        <div class="col-md-3 col-sm-3 col-xs-3">
+          <span class="member-de-label">Lose</span>
+          <span class="member-bold-txt">{{item.getPlayerslost}}</span>
+        </div>
+        
+        <div class="col-md-3 col-sm-3 col-xs-3">
+          <span class="member-de-label">Tied</span>
+          <span class="member-bold-txt">{{item.getPlayerstie}}</span>
+        </div>
+      <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+
+  </ion-content>
+</ion-view>

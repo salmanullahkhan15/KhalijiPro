@@ -1,0 +1,24 @@
+<ion-view view-title="Top Organizer Details">
+<ion-nav-bar class="bar-balanced">
+   <ion-nav-buttons side="left" align-title="center">
+            <button class="button button-icon icon ion-android-arrow-back" ui-sref="menuslider.menu"></button>
+          </ion-nav-buttons>
+</ion-nav-bar>
+  <ion-content class="center padding no-right-pad matchlist-page cus-bg-drop" style="background: url(img/bg/14.jpg) no-repeat center;background-size:cover;">
+
+ <div class="list card" ng-repeat="item in items">
+    <div class="member-list-box">
+      <div class="member-list-top-de">
+        <span class="member-list-left"><img ng-src="{{item.image_url || 'img/photo.png'}}" class="img-circle img-responsive"></span>
+        <div class="member-list-right-de">
+          <span class="member-usr-name">{{item.nickname}}</span>
+          <span class="member-location">{{item.City}}, </span>
+          <span class="member-location">No. of Match Organized {{item.getCountMatch}}</span>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <div class="clearfix"></div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

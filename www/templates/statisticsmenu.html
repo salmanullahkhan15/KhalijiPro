@@ -1,0 +1,75 @@
+<ion-view style="" id="page3" view-title="{{'statistics' | translate}}" class="{{myClass}}">
+    <ion-nav-bar class="bar-balanced {{myClass}}">
+        <ion-nav-buttons side="left" align-title="center">
+            <button class="button button-icon icon ion-android-arrow-back" ui-sref="menuslider.menu"></button>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-content class="center padding cus-bg-drop" style="background: url(img/bg/14.jpg) no-repeat center;background-size:cover;padding: 35px 10px 25px; ">
+        <div class="center menu-landing-page new-menu-img" style="
+    padding-top: 80px;">
+            <div class="col-md-4 col-sm-6 col-xs-6 box-pad">
+                <!--  <a class="button button-stable button-clear" ui-sref=""><img name="matches" style="display:block;" src="img/SwqikhxBSEKhXCteqGbN_match-menu-img.png" height="100%" width="100%" ></a> -->
+                <a class="button button-stable button-clear max-height-none new-img-txt" ng-model="item.language" ng-if="item.language == 'en'" ui-sref="rankingstatistics">
+                    <img name="matches" style="display:block;" src="img/home/ranking.png" height="100%" width="100%">
+                <p>Ranking</p>
+                </a>
+
+                <a class="button button-stable button-clear max-height-none new-img-txt" ng-model="item.language" ng-if="item.language == 'ar'" ui-sref="rankingstatistics">
+                    <img name="matches" style="display:block;" src="img/home/ranking.png" height="100%" width="100%">
+                <p>التقييم</p>
+                </a>
+
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-6 box-pad">
+                <!--  <a class="button button-stable button-clear" ui-sref=""><img name="clubs" style="display: block; margin-left: auto;" src="img/4e9ipaBFRACfx93xnvPE_newsfeed-menu-img.png" height="100%" width="100%"><p>asdfasdfasfasdf</p>
+                </a> -->
+                <a class="button button-stable button-clear max-height-none new-img-txt" ng-model="item.language" ng-if="item.language == 'en'" ui-sref="toporganizerstatistics">
+                    <img name="clubs" style="display: block; margin-left: auto;" src="img/home/top-orgniazers.png" height="100%" width="100%">
+                <p>Top Organizer</p>
+                </a>
+
+                <a class="button button-stable button-clear max-height-none new-img-txt" ng-model="item.language" ng-if="item.language == 'ar'" ui-sref="toporganizerstatistics">
+                    <img name="clubs" style="display: block; margin-left: auto;" src="img/home/top-orgniazers.png" height="100%"
+                        width="100%">
+                <p>افضل المنظمين</p>
+                </a>
+
+            </div>
+
+
+            <div class="col-md-4 col-sm-6 col-xs-6 box-pad">
+                <!-- <a class="button button-stable button-clear" ui-sref=""><img name="clubs" style="display:block;" src="img/EALYnQhDQFC6d5YvtkO1_message-menu-img.png" height="100%" width="100%"><p>asdfasdfasfasdf</p>
+                </a> -->
+                <a class="button button-stable button-clear max-height-none new-img-txt" ng-model="item.language" ng-if="item.language == 'en'" ui-sref="topplayersstatistics">
+                    <img name="clubs" style="display:block;" src="img/home/top-players.png" height="100%" width="100%">
+                <p>Top Players</p>
+                </a>
+
+                <a class="button button-stable button-clear max-height-none new-img-txt" ng-model="item.language" ng-if="item.language == 'ar'" ui-sref="topplayersstatistics">
+                    <img name="clubs" style="display:block;" src="img/home/top-players.png" height="100%" width="100%">
+                <p>افضل اللاعبين
+
+                </p>
+                </a>
+
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-6 box-pad">
+                <!--  <a class="button button-stable button-clear max-height-none new-img-txt" ui-sref=""><img name="clubs" style="display: block; margin-left: auto;" src="img/mcsrsCngS5iudsg4lljQ_next-match-menu-img.png" height="100%" width="100%"><p>asdfasdfasfasdf</p>
+                </a> -->
+                <a class="button button-stable button-clear max-height-none new-img-txt" ng-model="item.language" ng-if="item.language == 'en'" ui-sref="topclubsstatistics">
+                    <img name="clubs" style="display: block; margin-left: auto;" src="img/home/top-clubs.png" height="100%" width="100%">
+                <p>Top Clubs</p>
+                </a>
+
+                <a class="button button-stable button-clear max-height-none new-img-txt" ng-model="item.language" ng-if="item.language == 'ar'" ui-sref="topclubsstatistics">
+                    <img name="clubs" style="display: block; margin-left: auto;" src="img/home/top-clubs.png" height="100%" width="100%">
+                <p>افضل الاندية</p>
+                </a>
+
+            </div>
+
+
+            <div class="clearfix"> </div>
+        </div>
+    </ion-content>
+</ion-view>

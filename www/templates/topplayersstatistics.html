@@ -1,0 +1,59 @@
+<ion-view view-title="{{'topplayerss' | translate}}" class="{{myClass}}">
+<!-- <search-bar ng-model="search"></search-bar> -->
+<ion-nav-bar class="bar-balanced {{myClass}}">
+   <ion-nav-buttons side="left" align-title="center">
+            <button class="button button-icon icon ion-android-arrow-back" ui-sref="statisticsmenu"></button>
+          </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+             <button class="button button-icon icon ion-ios-search-strong" ng-click="showFilterBar()"></button>
+          </ion-nav-buttons>
+</ion-nav-bar>
+  <ion-content class="center padding no-right-pad matchlist-page topplayerss cus-bg-drop" style="background: url(img/bg/14.jpg) no-repeat center;background-size:cover;">
+  
+ 
+ <div class="list card" ng-repeat="item in items | limitTo:numberOfItemsToDisplay track by $index" ng-if="item.nickname!=null">
+    <div class="member-list-box">
+      <div class="member-list-top-de">
+        <span class="member-list-left"><img ng-src="{{item.getAvtar || 'img/photo.png'}}" class="img-circle img-responsive"></span>
+        <div class="member-list-right-de">
+          <span class="member-usr-name">{{item.nickname}}</span><!-- 
+          <span class="member-location">{{item.getDataClubName}}, </span> -->
+          <span class="member-de-label" style="float: left;padding-right: 5px;margin: 2px 0 0 0;">{{item.City}} </span><span class="member-bold-txt" style="text-align: center;
+    color: red;margin: -5px 24px 0 0px;background: #c7c7c7;min-width:8%;float: right;height: auto;
+    border-radius: 50% 50%;padding: 5px !important;font-size: 12px;">{{item.count}}</span>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <div class="member-list-bottom-de">
+        <div class="col-md-3 col-sm-3 col-xs-3">
+          <span class="member-de-label">{{'playedmatch' | translate}}</span>
+          <span class="member-bold-txt">{{item.getPlayersPlayed}}</span>
+        </div>
+        
+        <div class="col-md-3 col-sm-3 col-xs-3">
+          <span class="member-de-label">{{'won' | translate}}</span>
+          <span class="member-bold-txt">{{item.getPlayerswon}}</span>
+        </div>
+             
+        <div class="col-md-3 col-sm-3 col-xs-3">
+          <span class="member-de-label">{{'tied' | translate}}</span>
+          <span class="member-bold-txt">{{item.getPlayerstie}}</span>
+        </div>
+
+         <div class="col-md-3 col-sm-3 col-xs-3">
+          <span class="member-de-label">{{'lost' | translate}}</span>
+          <span class="member-bold-txt">{{item.getPlayerslost}}</span>
+        </div>
+      <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+ <ion-infinite-scroll
+ immediate-check="false"
+  icon="icon ion-looping"
+  on-infinite="addMoreItem()"  distance="5%">
+</ion-infinite-scroll>
+      
+
+  </ion-content>
+</ion-view>

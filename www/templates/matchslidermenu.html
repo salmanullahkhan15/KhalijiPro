@@ -1,0 +1,24 @@
+ <ion-nav-bar class="bar-stable">
+     <ion-nav-back-button>
+  </ion-nav-back-button>
+</ion-nav-bar>
+ <ion-tabs class="tabs-striped tabs-top tabs-background-balanced tabs-color-light {{myClass}}" tabs-swipable>
+
+  <!-- SCHEDULED Tab -->
+  <ion-tab title="({{countScheduledMatch.itemCount  || 0}}) {{'scheduled' | translate}}" href="#/matchslidermenu/mymatchscheduled">
+    <ion-nav-view name="mymatchscheduled"></ion-nav-view>
+  </ion-tab>
+
+  <!-- PENDING Tab -->
+  <ion-tab title="({{countPendingMatch.itemCount  || 0}}) {{'pending' | translate}}" href="#/matchslidermenu/mymatchpending">
+    <ion-nav-view name="mymatchpending"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Played BY Tab -->
+  <ion-tab title="({{countPlayeddddMatch.itemCount || 0}}) {{'played' | translate}}"href="#/matchslidermenu/mymatchplayedddd">
+    <ion-nav-view name="mymatchplayedddd"></ion-nav-view>
+  </ion-tab>
+
+
+ 
+</ion-tabs>

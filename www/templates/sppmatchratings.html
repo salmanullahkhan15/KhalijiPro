@@ -1,0 +1,168 @@
+<ion-view view-title="{{'resultratings' | translate}}" class="{{myClass}}">
+<ion-nav-bar class="bar-balanced {{myClass}}">
+   <ion-nav-buttons side="left" align-title="center">
+            <button class="button button-icon icon ion-android-arrow-back" ui-sref="spaddresultlistmatchstatistics"></button>
+          </ion-nav-buttons>
+</ion-nav-bar>
+  <ion-content class="center padding cus-bg-drop"  style="background: url(img/bg/14.jpg) no-repeat center;background-size:cover;">
+
+ <div class="panel-group match-player-accordion" id="accordion">
+  <div class="panel panel-default">
+   <ion-list>
+        <div>
+          <ion-item class="item-stable match-player-row-pad"
+                    ng-click="toggleGroup(group)"
+                    ng-class="{active: isGroupShown(group)}">
+             <!--  <i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i> -->
+             <div class="panel-heading">
+              <h4 class="panel-title">
+            <img class="img-circle" width="70px" ng-src="{{ group. clubImageUrl1}}"><span class="match-player-title">
+            {{group.clubName1}}</span>
+        </h4>
+        <span class="plus-minus-icon"></span>
+
+        </div>
+          </ion-item>
+           <div class="before-border">
+          <ion-item class="item-accordion"
+                ng-repeat="item in items"
+                    ng-show="isGroupShown(group)">
+          <div class="match-payer-detail-box {{item.awardedstatus1}} {{item.clubresult1}}">
+          <div class="pull-left player-img">
+            <img class="grey-cup">
+           <!--  <img ng-src="{{item.avtar_img}}" ng-click="assignAward( item.getUserID, item.getMatchID, item.getClubID)" class="img-circle" width="35px"> -->
+           <img ng-src="{{item.avtar_img}}" width="35px">
+          </div>
+          <div class="clearfix match-player-right-detail">
+            <div class="match-player-name">{{item.nickname}}<img class="award-img" src="img/gold-cup.png">
+
+            <p ng-click="assignRating(item.getUserID, item.getMatchID, item.getClubID, $index)" style="display:inline-flex;margin-top: 0px;float: right;
+                margin-right: 5px;">
+                <span class="stars">
+                <span style="width:{{item.final_rating}}px"></span>
+                </span>
+            </p>  
+             <!-- <div ng-repeat="i in [1]" class="ionic_new_rating">
+              <ionic-ratings ratingsobj='ratingsObject' index='$index' ng-click="assignRating( item.getUserID, item.getMatchID, item.getClubID)"></ionic-ratings>
+             </div> -->
+             <!-- <div star-rating rating-value="rating.current" max="rating.max" on-rating-selected="getSelectedRating(rating)"></div> -->
+
+            </div>
+
+
+            <div class="col-md-3 col-sm-3 col-xs-3 no-padding">
+              <span class="match-de-label">{{'playedmatch' | translate}}</span>
+              <span class="match-de-dec">{{item.getPlayersPlayed}}</span>
+          
+            </div>
+            
+            <div class="col-md-3 col-sm-3 col-xs-3 no-padding">
+              <span class="match-de-label">{{'won' | translate}}</span>
+              <span class="match-de-dec">{{item.getPlayerswon}}</span>
+          
+            </div>
+            
+            <div class="col-md-3 col-sm-3 col-xs-3 no-padding">
+              <span class="match-de-label">{{'tied' | translate}}</span>
+              <span class="match-de-dec">{{item.getPlayerstie}}</span>
+          
+            </div>
+
+            <div class="col-md-3 col-sm-3 col-xs-3 no-padding">
+              <span class="match-de-label">{{'lost' | translate}}</span>
+              <span class="match-de-dec">{{item.getPlayerslost}}</span>
+          
+            </div>
+
+
+              <div class="clear"></div>
+          </div>
+        </div>
+        </ion-item>
+        </div>
+        </div>
+
+      </ion-list>
+  </div>
+
+  <div class="panel panel-default">
+   <ion-list>
+        <div>
+          <ion-item class="item-stable match-player-row-pad"
+                    ng-click="toggleGroup(group2)"
+                    ng-class="{active: isGroupShown(group2)}">
+             <!--  <i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i> -->
+             <div class="panel-heading">
+              <h4 class="panel-title">
+            <img class="img-circle" width="70px" ng-src="{{ group2. clubImageUrl2}}"><span class="match-player-title">
+            {{group2.clubName2}}</span>
+            <!-- Group2 {{group.clubName2}} -->
+        </h4>
+        <span class="plus-minus-icon"></span>
+
+        </div>
+          </ion-item>
+           <div class="before-border">
+          <ion-item class="item-accordion"
+                ng-repeat="item in group2.items"
+                    ng-show="isGroupShown(group2)">
+          <div class="match-payer-detail-box {{item.awardedstatus2}} {{item.clubresult2}}">
+          <div class="pull-left player-img">
+            <img class="grey-cup">
+            <!-- <img ng-src="{{item.avtar_img}}" ng-click="assignAward( item.getUserID, item.getMatchID, item.getClubID, $index)" class="img-circle {{item.awardedstatus2}}" width="35px" > -->
+          <img ng-src="{{item.avtar_img}}" width="35px">
+        </div>
+          <div class="clearfix match-player-right-detail">
+            <div class="match-player-name">{{item.nickname}} 
+
+             <p ng-click="assignRating(item.getUserID, item.getMatchID, item.getClubID, $index)" style="display:inline-flex;margin-top: 0px;float: right;
+                margin-right: 5px;">
+                <span class="stars">
+                <span style="width:{{item.final_rating}}px"></span>
+                </span>
+            </p>  
+           <!--  <div ng-repeat="i in [1]" class="ionic_new_rating">
+              <ionic-ratings ratingsobj='ratingsObject' index='$index'></ionic-ratings>
+            </div>
+ -->
+            </div>
+            
+            <div class="col-md-3 col-sm-3 col-xs-3 no-padding">
+              <span class="match-de-label">{{'playedmatch' | translate}}</span>
+              <span class="match-de-dec">{{item.getPlayersPlayed}}</span>
+          
+            </div>
+            
+            <div class="col-md-3 col-sm-3 col-xs-3 no-padding">
+              <span class="match-de-label">{{'won' | translate}}</span>
+              <span class="match-de-dec">{{item.getPlayerswon}}</span>
+          
+            </div>
+            
+            <div class="col-md-3 col-sm-3 col-xs-3 no-padding">
+              <span class="match-de-label">{{'tied' | translate}}</span>
+              <span class="match-de-dec">{{item.getPlayerstie}}</span>
+          
+            </div>
+
+            <div class="col-md-3 col-sm-3 col-xs-3 no-padding">
+              <span class="match-de-label">{{'lost' | translate}}</span>
+              <span class="match-de-dec">{{item.getPlayerslost}}</span>
+          
+            </div>
+            
+            
+
+
+              <div class="clear"></div>
+          </div>
+        </div>
+        </ion-item>
+        </div>
+        </div>
+
+      </ion-list>
+  </div>
+</div>
+  </ion-content>
+</ion-view>

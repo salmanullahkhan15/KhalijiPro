@@ -1,0 +1,61 @@
+<ion-view view-title="{{'aasignratingfile' | translate}}" class="{{myClass}}">
+<ion-nav-bar class="bar-balanced {{myClass}}">
+   <ion-nav-buttons side="left" align-title="center">
+            <button class="button button-icon icon ion-android-arrow-back" ui-sref="sppoverviewslidermenu.sppmatchratings"></button>
+          </ion-nav-buttons>
+          <ion-nav-buttons side="right">
+             <button class="button button-icon icon ion-ios-search-strong"></button>
+          </ion-nav-buttons>
+</ion-nav-bar>
+  <ion-content class="center  no-right-pad matchlist-page cus-bg-drop" style="background: url(img/bg/14.jpg) no-repeat center;background-size:cover;">
+  
+ <div class="list card">
+    <div class="member-list-box">
+      <div class="member-list-top-de">
+        <span class="member-list-left"><img ng-src="{{item.getAvtar || 'img/photo.png'}}" class="img-circle img-responsive"></span>
+        <div class="member-list-right-de">
+          <span class="member-usr-name">{{item.nickname}}</span>
+          <!-- <span class="member-de-label" style="float: left;padding-right: 5px;margin: 2px 0 0 0;">{{item.City}} </span><span class="member-bold-txt" style="text-align: center;
+    color: red;margin: -5px 24px 0 0px;background: #c7c7c7;min-width:8%;float: right;height: auto;
+    border-radius: 50% 50%;padding: 5px !important;font-size: 12px;">{{item.count}}</span> -->
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <div class="member-list-bottom-de">
+        <div class="col-md-3 col-sm-3 col-xs-3">
+          <span class="member-de-label">{{'playedmatch' | translate}}</span>
+          <span class="member-bold-txt">{{item.getPlayersPlayed}}</span>
+        </div>
+        
+        <div class="col-md-3 col-sm-3 col-xs-3">
+          <span class="member-de-label">{{'won' | translate}}</span>
+          <span class="member-bold-txt">{{item.getPlayerswon}}</span>
+        </div>
+        
+         <div class="col-md-3 col-sm-3 col-xs-3">
+          <span class="member-de-label">{{'tied' | translate}}</span>
+          <span class="member-bold-txt">{{item.getPlayerstie}}</span>
+        </div>
+         
+        <div class="col-md-3 col-sm-3 col-xs-3">
+          <span class="member-de-label">{{'lost' | translate}}</span>
+          <span class="member-bold-txt">{{item.getPlayerslost}}</span>
+        </div>
+      <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+ <div class="form-group form-md-line-input text-center player-rate">
+ 	<label for="form_control_1">Please rate player on a scale of 0-5<span style="color:red;">*</span></label>
+	<br>
+    <label class="rate-number"><input type="radio" name="rate" id="optionsRadios1" ng-value="'20'" ng-model="item.ratingvalues">1</label>
+    <label class="rate-number"><input type="radio" name="rate" id="optionsRadios2" ng-value="'40'" ng-model="item.ratingvalues">2</label>
+    <label class="rate-number"><input type="radio" name="rate" id="optionsRadios3" ng-value="'60'" ng-model="item.ratingvalues">3</label>
+    <label class="rate-number"><input type="radio" name="rate" id="optionsRadios4" ng-value="'80'" ng-model="item.ratingvalues">4</label>
+    <label class="rate-number"><input type="radio" name="rate" id="optionsRadios5" ng-value="'100'" ng-model="item.ratingvalues">5</label>
+</div>
+ <button ng-disabled="!item.ratingvalues" class="cus-login-btn button button-balanced  button-block icon ion-ios-personadd-outline" id="signUp-button6" ng-click="submitplayerRates(item);">{{'aasignrates' | translate}}</button>
+
+
+  </ion-content>
+</ion-view>

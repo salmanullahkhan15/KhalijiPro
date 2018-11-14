@@ -1,0 +1,100 @@
+<ion-view view-title="{{'resultoverview' | translate}}" class="{{myClass}}">
+<ion-nav-bar class="bar-balanced {{myClass}}">
+   <ion-nav-buttons side="left" align-title="center">
+            <button class="button button-icon icon ion-android-arrow-back" ui-sref="spaddresultlistmatchstatistics"></button>
+          </ion-nav-buttons>
+</ion-nav-bar>
+  <ion-content class="center padding no-right-pad matchlist-page cus-bg-drop" style="background: url(img/bg/14.jpg) no-repeat center;background-size:cover;">
+<form role="form">
+<div class="match-overview">
+	<div class="match-over-vs-de">
+		<div class="mat-res-sp-center">
+				{{item.matchName}}, {{item.sportcenterName}}
+				<div>{{'matchcreatedby' | translate}} : {{item.matchCreatedByname}}</div>
+			</div>
+			<div class="match-vs-top-de">
+				<span class="vs-team-logo pull-left zindex">
+					<div class="img-block">
+					  <input name="rdMatchResultClubID" id="silver"  ng-checked="(item.club1result == 'Won')" class="input-hidden-match" value="{{item.clubID1}}" type="radio" ng-model="item.valueforresult">
+						<label for="silver">
+							<img class="img-circle" ng-src="{{item.clubImageUrl1}}">
+						 
+						 <div class="before-result">
+						 </div>
+										
+						</label>
+						</div>
+					
+					<span class="team-name">{{item.clubName1}}</span>
+
+
+
+					<button class="join-btn player-detail-btn right-0" href="#" ng-class="{'match-list-won-btn': item.club1result == '{{'won' | translate}}', 'button-positive': item.club1result == '{{'lost' | translate}}', 'notplayed-btn': item.club1result == '{{'notplayed' | translate}}', 'match-list-tie-btn': item.club1result == '{{'tied' | translate}}'}" value="">{{item.club1result}}</button>
+				</span>
+				<span class="vs-txt result">{{'vs' | translate}}</span>
+				<span class="match-scedule-detail">
+		        <span class="vs-txt-time">{{item.matchTime}}</span>
+		        <span class="vs-txt-date">{{item.newMatchDate | date: "dd-MM-yyyy"}}</span>
+		        <span class="vs-txt-time">{{item.dayofDate}}</span>
+		        <span class="vs-txt-location">{{item.matchLocation}}</span>
+		        </span>
+				<span class="vs-team-logo pull-right zindex">
+					<!-- <img  class="img-circle" ng-src="{{ item.clubImageUrl2}}"> -->
+					<div class="img-block">
+					  <input name="rdMatchResultClubID" id="gold" class="input-hidden-match" ng-checked="(item.club2result == 'Won')" value="{{item.clubID2}}" type="radio" ng-model="item.valueforresult">
+						<label for="gold">
+							<img class="img-circle" ng-src="{{item.clubImageUrl2}}">
+						 
+						 <div class="before-result">
+						 </div>
+										
+						</label>
+						</div>
+					<span class="team-name">{{item.clubName2}}</span>
+					<button class="join-btn player-detail-btn right-0" href="#" ng-class="{'match-list-won-btn': item.club2result == '{{'won' | translate}}', 'button-positive': item.club2result == '{{'lost' | translate}}', 'notplayed-btn': item.club2result == '{{'notplayed' | translate}}', 'match-list-tie-btn': item.club2result == '{{'tied' | translate}}'}" value="">{{item.club2result}}</button>
+				</span>
+				<div class="clear"></div>
+			</div>
+			<!-- Match Played
+			ng-show="{{item.matchStatus != 'Match Played'}}"
+			Add result -->
+			<!-- <span ng-hide="{{item.matchStatus !== 'Add result'}}">add result---{{item.matchStatus}}</span> -->
+			<!-- <br>
+			DEFAULT--{{item.matchStatus}}
+			<br> -->
+	<!-- <span ng-hide="{{item.matchStatus !== 'Match Played'}}">match played---{{item.matchStatus}}</span>
+<br>
+<br>
+<br>ng-disabled="!item.valueforresult"
+ -->
+
+			
+	</div>
+<div class="clear"></div>
+			<div class="match-vs-bt-de buttons-for-results addresult {{item.matchclassshow}}">
+				<button class="join-btn player-detail-btn" href="#"  value="Add Result" ng-click="resultAdd(item.matchID, item.valueforresult);">{{'addresult' | translate}}</button>
+				<button ng-model="tieresult_bind" class="join-btn player-detail-btn" href="#" value="Tie"  ng-click="resultTie(item.matchID);">{{'tie' | translate}}</button>
+				<button class="join-btn player-detail-btn" href="#" value="Reset" type="reset" ng-click="resultrReset(item.matchID);">{{'reset' | translate}}</button>
+			</div>
+			<div class="match-vs-bt-de buttons-for-resultsmatchplayed matchplayed {{item.matchclasshide}}">
+				<button class="join-btn player-detail-btn" href="#" value="Add Result">{{'matchplayed' | translate}}</button>
+			</div>
+	
+	
+
+</div>
+</form>
+<div class="match-description">
+		<div class="overview-title">
+		{{'overview' | translate}}
+		</div>
+		<div class="overview-dec">
+			<p>{{item.matchOverview}}</p>
+		</div>
+	</div>
+
+
+
+
+  </ion-content>
+</ion-view>

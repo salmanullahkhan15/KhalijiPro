@@ -1,0 +1,52 @@
+<ion-view view-title="Message">
+<ion-nav-bar class="bar-balanced">
+   <ion-nav-buttons side="left" align-title="center">
+            <button class="button button-icon icon ion-android-arrow-back" ui-sref="supervisormenuslider.supervisormenu"></button>
+          </ion-nav-buttons>
+           <ion-nav-buttons side="right">
+        <button class="button button-icon icon ion-ios-compose-outline" ui-sref="contacttosupervisor"></button>
+        </button>
+    </ion-nav-buttons>
+</ion-nav-bar>
+  <ion-content class="has-header message-inbox cus-bg-drop" padding="true" style="background:url(img/bg/14.jpg) no-repeat scroll center center / cover ;">
+   <!--  <div class="list card">
+     
+      <a ng-repeat="item in items"
+            ng-click="getsentmessagedetails(item.messageID);"
+           class="item item-thumbnail-left">
+       <center><h2>{{item.messageTitle}}</h2> </center>
+        <p>UserName : {{item.senderUsername}}</p>
+        <p>Date/Time : {{item.messsageDateTime}}</p>
+        <p>Sender : {{item.displayNameSenderName}}</p>
+     </a>
+  </div> -->
+
+   <div class="list card mt-0" >
+      <!-- <ion-item class="item-icon-right item-avatar defaultItem"> -->
+      <!-- <a ng-repeat="item in items"
+           href="#/sentmessagedetails/{{item.messageID}}"
+           class="item item-thumbnail-left">
+       --> 
+     <a ng-repeat="item in items" ng-click="getsentmessagedetails(item.messageID);"  class="item item-thumbnail-left">
+       <!-- <img class="full-image" ng-src="{{item.clubImageUrl || 'img/photo.png'}}"> -->
+       <!-- <center><h2>{{item.messageTitle}}</h2> </center>
+        <p>UserName : {{item.senderUsername}}</p>
+        <p>Date/Time : {{item.messsageDateTime}}</p>
+        <p>Sender : {{item.displayNameSenderName}}</p> -->
+    <div class="message-row">
+      <div class="message-row-left">
+      <span class="message-usr-name">{{item.messageTitle}}</span>
+      <span class="message-usr-designation">{{item.displayNameSenderName}}</span>
+      </div>
+      
+      <div class="message-row-right">
+        <span class="message-time">{{item.messsageDateTime}}</span>
+      </div>
+      
+      <div class="message-dec">
+       <!--  HI kapil G, You have new follower on Dribble.Alisha Miudo UI UX & Interaction Designer Milan... -->
+      </div>
+    </div>
+    </a>
+  </ion-content>
+</ion-view>

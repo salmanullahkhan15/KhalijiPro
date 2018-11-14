@@ -1,0 +1,68 @@
+<ion-view view-title="{{'clublist' | translate}}" class="{{myClass}}">
+ <ion-nav-bar class="bar-balanced {{myClass}}">
+  <div ng-if="!hideContent">
+  <div ui-view></div>
+</div>
+   <ion-nav-buttons side="left" align-title="center">
+            <button class="button button-icon icon ion-android-arrow-back" ui-sref="clubmenu"></button>
+          </ion-nav-buttons>
+            <ion-nav-buttons side="right">
+             <button class="button button-icon icon ion-ios-search-strong" ng-click="showFilterBar()"></button>
+          </ion-nav-buttons>
+</ion-nav-bar>
+  <ion-content class="center padding clubinyourarea cus-bg-drop" style="background: url(img/bg/14.jpg) no-repeat center;background-size:cover;">
+    <ion-list>
+     <ion-item  ng-repeat="item in items | limitTo:numberOfItemsToDisplay track by $index">
+   <br>
+           <div ng-class="col-md-4 col-sm-4 col-xs-12 responsive-pad">
+    <div class="clubarea-main-box">
+      <div class="clubarea-detail1">
+        <div class="">
+          <div class=frame>
+<span class="helper"></span>
+  <img ng-src="http://www.khalijipro.com/wp-content/plugins/attune/images/club/{{item.clubImageUrl || 'img/photo.png'}}" >
+</div> 
+         <!--  <span class="club-name" ng-click="getclubdetails(item.clubID);">{{item.clubName}}</span> -->
+          <span class="club-name">{{item.clubName}}</span>
+          <span class="club-total-member" ng-click="getmemberdetails(item.clubID);">{{item.clubMemberCount}}<small>{{'members' | translate}}</small></span>
+          <span class="image-shadow"></span>
+          <button class="join-btn" href="#" ng-click="getjoinclub(item.clubID);" ng-class="{'match-list-won-btn': item.status == '{{'approvvved' | translate}}', 'button-positive': item.status == '{{'joiin' | translate}}','pending-btn': item.status == '{{'pendding' | translate}}'}"value="JOIN" ng-disabled="item.status == '{{'pendding' | translate}}' || item.status == '{{'approvvved' | translate}}'">{{item.status}}</button>
+        </div>
+      </div>
+      
+      <div class="clubarea-detail2">
+        <div class="club-area-played-match">{{'playedmatch' | translate}}: {{item.playedMatchCount}}</div>
+        
+        <div class="club-area-played-match-status">
+        
+          <span class="col-md-4 col-sm-4 col-xs-4">
+            <span class="status-title">{{'won' | translate}}</span>
+            <span class="status-number">{{item.wonMatchCount}}</span>
+          </span>
+          
+           <span class="col-md-4 col-sm-4 col-xs-4">
+            <span class="status-title">{{'tied' | translate}}</span>
+            <span class="status-number">{{item.tieMatchCount}}</span>
+          </span>
+
+          <span class="col-md-4 col-sm-4 col-xs-4">
+            <span class="status-title">{{'lost' | translate}}</span>
+            <span class="status-number">{{item.lostMatchCount}}</span>
+          </span>
+          
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+    </div>
+     </ion-item>
+</ion-list >
+ <ion-infinite-scroll
+ immediate-check="false"
+ ng-if="!noMoreItemsAvailable"
+  icon="icon ion-loading-c"
+  on-infinite="addMoreItem()"  distance="5%">
+</ion-infinite-scroll>     
+
+  </ion-content>
+</ion-view>

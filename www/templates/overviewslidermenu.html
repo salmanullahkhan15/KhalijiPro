@@ -1,0 +1,20 @@
+<ion-nav-bar class="bar-stable">
+     <ion-nav-back-button>
+  </ion-nav-back-button>
+</ion-nav-bar>
+ <ion-tabs class="tabs-striped tabs-top tabs-background-balanced tabs-color-light {{myClass}}" tabs-swipable>
+
+
+ <!-- OVERVIEW Tab -->
+  <ion-tab title="{{'overviewtab' | translate}}" href="#/overviewslidermenu/matchoverview">
+    <ion-nav-view name="matchoverview"></ion-nav-view>
+  </ion-tab>
+
+
+  <!-- MATCH PLAYERS Tab -->
+  <ion-tab title="{{'matchplayerstab' | translate}}" href="#/overviewslidermenu/matchplayers">
+    <ion-nav-view name="matchplayers"></ion-nav-view>
+  </ion-tab>
+
+ 
+</ion-tabs>

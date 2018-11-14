@@ -1,0 +1,61 @@
+<ion-view view-title="{{'memberapproval' | translate}}" class="{{myClass}}">
+<ion-nav-bar class="bar-balanced {{myClass}}">
+   <ion-nav-buttons side="left" align-title="center">
+            <button class="button button-icon icon ion-android-arrow-back" ui-sref="clubmenu"></button>
+          </ion-nav-buttons>
+           <ion-nav-buttons side="right">
+             <button class="button button-icon icon ion-ios-search-strong" ng-click="showFilterBar()"></button>
+          </ion-nav-buttons>
+</ion-nav-bar>
+  <ion-content class="center no-right-pad matchlist-page cus-bg-drop" style="background: url(img/bg/14.jpg) no-repeat center;background-size:cover;">
+
+ <div class="list card" ng-repeat="item in items | limitTo:numberOfItemsToDisplay track by $index">
+    <div class="member-list-box">
+      <div class="member-list-top-de">
+        <span class="member-list-left"><img ng-src="{{item.avatar || 'img/photo.png'}}" class="img-circle img-responsive"></span>
+        <div class="member-list-right-de">
+          <span class="member-usr-name">{{item.nickname}}</span>
+          <span class="member-location">{{item.City}}</span>
+          <span class="member-location">{{item.getDataClubName}}</span>
+           <span class="member-list-right"><button class="join-btn green-btn" href="#" ng-click="getApproveButton(item.getUserID, item.getClubID);" ng-class="{'button-positive': item.Approved == '{{'approvvved' | translate}}','pending-btn': item.Approved == '{{'appprove' | translate}}'}" value="Approve" ng-disabled="item.Approved == '{{'approvvved' | translate}}'">{{item.Approved}}</button></span>
+
+            <span class="member-list-right"><button class="reject-btn" href="#" ng-click="getRejectButton(item.getUserID, item.getClubID);" ng-class="{'pending-btn': item.Reject == '{{'rejecct' | translate}}'}" value="Reject">{{item.Reject}}</button></span>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <div class="member-list-bottom-de">
+        <div class="col-md-3 col-sm-3 col-xs-3">
+          <span class="member-de-label">{{'playedmatch' | translate}}</span>
+          <span class="member-bold-txt">{{item.getPlayersPlayed}}</span>
+        </div>
+        
+        <div class="col-md-3 col-sm-3 col-xs-3">
+          <span class="member-de-label">{{'won' | translate}}</span>
+          <span class="member-bold-txt">{{item.getPlayerswon}}</span>
+        </div>
+
+         <div class="col-md-3 col-sm-3 col-xs-3">
+          <span class="member-de-label">{{'tied' | translate}}</span>
+          <span class="member-bold-txt">{{item.getPlayerstie}}</span>
+        </div>
+        
+        <div class="col-md-3 col-sm-3 col-xs-3">
+          <span class="member-de-label">{{'lost' | translate}}</span>
+          <span class="member-bold-txt">{{item.getPlayerslost}}</span>
+        </div>
+        
+       
+      <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+   <ion-infinite-scroll
+ immediate-check="false"
+ ng-if="!noMoreItemsAvailable"
+  icon="icon ion-loading-c"
+  on-infinite="addMoreItem()"  distance="5%">
+</ion-infinite-scroll>     
+
+
+  </ion-content>
+</ion-view>

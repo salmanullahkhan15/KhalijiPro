@@ -1,0 +1,27 @@
+<ion-view view-title="Supervisor Club In Your Details">
+<ion-nav-bar class="bar-balanced">
+   <ion-nav-buttons side="left" align-title="center">
+            <button class="button button-icon icon ion-android-arrow-back" ui-sref="supervisorclubslidermenu.supervisorclublist"></button>
+          </ion-nav-buttons>
+</ion-nav-bar>
+  <ion-content>
+  <div class="list">
+    <div class="list card">
+      <!-- <ion-item class="item-icon-right item-avatar defaultItem"> -->
+       <!-- <img class="full-image" ng-src="{{item.clubImageUrl || 'img/photo.png'}}"> -->
+        <div ng-repeat="item in items"
+           class="item item-thumbnail-left">
+       <img class="full-image" ng-src="{{item.clubImageUrl1}}"></img>
+       <center><h2>ClubName : {{item.clubName1}}</h2> </center>
+       <p>Match Date : {{item.matchDate}}</p>
+       <p>Match Time : {{item.matchTime}}</p>
+        <p>Match Location : {{item.matchLocation}}</p>
+        <!-- <p>Club City Area : {{item.clubCityArea}}</p>
+        <p>Club Founder: {{item.clubFounder}}</p>
+        <p>Club Status : {{item.clubStatus}}</p> -->
+        <!-- <p>Sender : {{item.displayNameSenderName}}</p> -->
+     </div>
+  </div>
+</div>
+  </ion-content>
+</ion-view>

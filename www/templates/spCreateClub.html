@@ -1,0 +1,67 @@
+<ion-view style="" id="page4" title="{{'createclub' | translate}}" class="login-bg {{myClass}}">
+<ion-nav-bar class="bar-balanced {{myClass}}">
+       <ion-nav-buttons side="left" align-title="center">
+            <button class="button button-icon icon ion-android-arrow-back" ui-sref="clubmenu"></button>
+          </ion-nav-buttons>
+</ion-nav-bar>
+   <ion-content class="has-header cus-bg-drop" padding="true" style="background: url(img/bg/14.jpg) no-repeat center;background-size:cover;">
+    </br>
+        <form style="" class="list {{myClass}}" name="createclubform">
+             <div style="margin: 0 auto; width:100px" class="edit-profile-img">
+                   <img class="profile-img button button-dark button-small dark-transparent w-full" onerror="alert(this.src);" ng-click="addImage()" ng-src="{{'img/photo.png'}}" id="myImage" ng-class="allvalidation[5].validation" accept="image/*" ng-model="createClub.picFile"></img>
+                   <!--  <input type="file" ngf-select ng-model="picFile" name="file"    
+                           accept="image/*" ngf-max-size="2MB" required
+                           ngf-model-invalid="errorFile">
+                    <i ng-show="myForm.file.$error.required">*required</i><br>
+                    <i ng-show="myForm.file.$error.maxSize">File too large 
+                        {{errorFile.size / 1000000|number:1}}MB: max 2M</i> -->
+            </div>
+        <!-- <br> -->
+        <div class="bar bar-header item item-input padding bar-stable custom-form-controll">
+            <i class="icon ion-ios-person-outline padding-top"></i>
+            <label style="" name="nameClub" class="item item-input" ng-class="allvalidation[0].validation">
+                <!-- <span class="input-label">Username</span> -->
+                <input placeholder="{{'clubname' | translate}}" type="text" ng-model="createClub.clubname">
+            </label>
+            </div>
+            <!-- <br> -->
+<!-- 
+            <div class="bar bar-header item item-input padding bar-stable custom-form-controll">
+            <i class="icon ion-ios-unlocked-outline padding-top"></i>
+            <label style="" name="cityClub" class="item item-input" ng-class="allvalidation[1].validation">
+                <span class="loc-detail-txt" style="color: black;">{{item.country}}</span>
+            </label>
+            </div> -->
+            <!-- <br> -->
+
+         <div class="bar bar-header item item-input padding bar-stable custom-form-controll">
+            <i class="icon ion-ios-unlocked-outline padding-top"></i>           
+            <label style="" name="clubCountry" class="item item-input item-select" ng-class="allvalidation[2].validation">
+              <!--  <select ng-model="createClub.clubCountry">  -->
+                   <!--  <option  ng-repeat="country in countries" value="{{item.country}}">{{item.country}}</option> -->
+                  <!--  <select ng-model="createClub.clubCountry" ng-options="country for country in countries"><option value=''>Select Country</option> -->
+                  <span class="loc-detail-txt" style="color: black;">{{item.club_city_area}}</span>
+                    <!-- <option>UAE</option> -->
+               </select>
+            </label>
+            </div>
+             <!-- <br>             -->
+            <div class="bar bar-header item item-input padding bar-stable custom-form-controll">
+            <i class="icon ion-ios-unlocked-outline padding-top"></i>
+            <label style="" name="founderClub" class="item item-input" ng-class="allvalidation[3].validation">
+                <!-- <span class="input-label">Email</span> -->
+                <!-- <input  placeholder="Club Founder" type="text" ng-model="createClub.founderClub" > -->
+                <span class="loc-detail-txt" style="color: black;">{{item.club_founder}}</span>
+            </label>
+            </div>
+            <!-- <br> -->
+            
+             <div class="bar bar-header item item-input padding bar-stable custom-textarea-controll">
+                      <textarea rows="4" cols="50" placeholder="{{'cluboverview' | translate}}" ng-class="allvalidation[4].validation" ng-model="createClub.overviewClub"></textarea>
+                </div>
+            <!-- <br> -->
+        </form>
+        <button class="cus-login-btn button button-balanced  button-block icon ion-ios-personadd-outline" id="signUp-button6" ng-click="createClubsubmit(createClub);"> {{'createclub' | translate}}</button>
+
+    </ion-content>
+</ion-view>

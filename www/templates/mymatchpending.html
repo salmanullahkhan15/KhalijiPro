@@ -1,0 +1,33 @@
+<ion-view view-title="{{'matchstatus' | translate}}" class="{{myClass}}">
+<ion-nav-bar class="bar-balanced {{myClass}}">
+   <ion-nav-buttons side="left" align-title="center">
+            <button class="button button-icon icon ion-android-arrow-back" ui-sref="matchmenu"></button>
+          </ion-nav-buttons>
+</ion-nav-bar>
+  <ion-content class="center padding no-right-pad matchlist-page cus-bg-drop" style="background: url(img/bg/14.jpg) no-repeat center;background-size:cover;">
+    <div class="opacity-back"></div>
+  <div class="list card" ng-repeat="itemdaydate in matchBy">
+    <div ng-repeat="item in itemdaydate.data" ng-click="getPlayedMatchDetails(item.matchID)">
+      
+      <div class="match-list-row">
+         <div class="match-image pull-left">
+              <img ng-src="{{item.images || 'img/photo.png'}}" class="img-circle">
+            </div>
+        <div class="match-right-detail">
+          <div class="left-inner pull-left">
+            
+        <div class="match-title">{{item.matchName}}</div>
+            <div class="match-location">{{item.matchLocation}}</div>
+            <div class="match-post-date">{{itemdaydate.dayofDate}}</div>
+            <div class="match-post-date">{{itemdaydate.matchDate}} | {{item.matchTimeHours}} : {{item.matchTimeMin}}</div>
+            </div>
+  <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+
+    
+  </div>
+  </div>
+
+  </ion-content>
+</ion-view>

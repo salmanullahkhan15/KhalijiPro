@@ -1,0 +1,100 @@
+<ion-view style="" id="page4" title="{{'editmatcch' | translate}}" class="login-bg {{myClass}}">
+<ion-nav-bar class="bar-balanced {{myClass}}">
+       <ion-nav-buttons side="left" align-title="center">
+            <button class="button button-icon icon ion-android-arrow-back" ui-sref="matchmenu"></button>
+          </ion-nav-buttons>
+</ion-nav-bar>
+   <ion-content class="has-header cus-bg-drop" padding="true" style="background: url(img/bg/14.jpg) no-repeat center;background-size:cover;">
+    </br>
+        <form style="" class="list" name="editMatchform">
+            <!--  <div style="margin: 0 auto; width:100px" class="edit-profile-img">
+                   <img class="profile-img button button-dark button-small dark-transparent w-full" onerror="alert(this.src);" ng-click="addImage()" ng-src="{{'img/photo.png'}}" id="myImage" ng-class="allvalidation[5].validation" accept="image/*" ng-model="createMatch.picFile"></img>
+            </div> -->
+        <br>
+        <div class="bar bar-header item item-input padding bar-stable custom-form-controll">
+            <i class="icon ion-ios-person-outline padding stable"></i>
+            <label style="" name="nameMatch" class="item item-input" ng-class="allvalidation[0].validation">
+                <input placeholder="Match Name" type="text" ng-model="item.matchname">
+            </label>
+            </div>
+            <br>
+
+            <div class="bar bar-header item item-input padding bar-stable custom-form-controll">
+            <i class="icon ion-ios-unlocked-outline padding stable"></i>
+            <label style="" name="cityMatch" class="item item-input" ng-class="allvalidation[1].validation">
+                <span class="loc-detail-txt" style="color: white;">{{item.club_city_area}}</span>
+            </label>
+            </div>
+            <br>
+
+          <div class="bar bar-header item item-input padding bar-stable custom-select-box">           
+            <label style="" name="matchclub1" class="item item-input item-select" ng-class="allvalidation[2].validation">
+                 <select ng-model="item.matchclubs1" ng-options="clubs.clubID as clubs.clubName for clubs in clubses1"  ng-change="Getselectedclub2()"><option value='{{item.matchclubs1}}'>{{item.matchclubs1}}</option>
+               </select>
+                <!--    <select ng-model="clubs1" ng-options="clubs.clubID as clubs.clubName for clubs in clubses"  ng-change="selected_name=(clubses|filter:{clubID:clubs1})[0].clubName"><option value=''>Select Club I</option>
+               </select> -->
+            </label>
+            </div>
+            <!--  <p>Selected id:{{clubs1}}</p>
+              <p>Selected name:{{selected_name}}</p> -->
+            <br>
+          <div class="bar bar-header item item-input padding bar-stable custom-select-box">           
+            <label style="" name="item.matchclub2" class="item item-input item-select" ng-class="allvalidation[3].validation">
+                   <select ng-model="item.matchclubs2" ng-options="clubs.clubID as clubs.clubName for clubs in clubses2"><option value='{{item.matchclubs2}}'>{{item.matchclubs2}}</option>
+               </select>
+            </label>
+            </div>
+             <br>   
+             <div class="bar bar-header item item-input padding bar-stable custom-form-controll">
+                    <label style="" name="dateofMatch" ng-class="allvalidation[4].validation">
+                        <input type="date" class="placeholderclass ver-top-align" ng-model="item.date_of_Match" value="{{item.date_of_Match  | date: 'dd-MM-yyyy' }}">{{item.date_of_Match  | date: 'dd-MM-yyyy' }}
+                    </label>
+             </div> 
+            <br>   
+             <div class="bar bar-header item item-input padding bar-stable custom-form-controll">
+                    <label style="" name="timeofMatch"ng-class="allvalidation[5].validation">
+                        <!--  <input type="time" ng-model="item.time_of_Match" placeholder="Choose Time"> -->
+                        <input type="time" id="sampleInput" class="placeholderclass ver-top-align" name="input" ng-model="item.time_of_Match" value="{{item.time_of_Match}}">{{item.time_of_Match | date: 'HH:mm'}}
+                       <!--  <span class="time-value">{{time_of_Match | date: "HH:mm"}}</span> -->
+                    </label>
+             </div> 
+             <br>
+             
+                   <!--             <div role="alert">
+                                 <span ng-show="createMatchform.input.$error.required">
+                                    Input is Required!</span>
+                                 <span ng-show="createMatchform.input.$error.time">
+                                   Input Date is  not Valid!</span>
+                              </div>
+                              <i>value = <b>{{item.time_of_Match | date: "HH:mm"}}</b></i><br/>
+                              <i>createMatchform.input.$valid = <b>{{createMatchform.input.$valid}}</b></i><br/>
+                              <i>createMatchform.input.$error = <b>{{createMatchform.input.$error}}</b></i><br/>
+                              <i>createMatchform.$valid = <b>{{createMatchform.$valid}}</b></i><br/>
+                              <i>createMatchform.$error.required = <b>{{!!createMatchform.$error.required}}</b></i><br/>
+            <br>   -->
+             <div class="bar bar-header item item-input padding bar-stable custom-select-box">           
+            <label style="" name="matchSportCenter" class="item item-input item-select" ng-class="allvalidation[6].validation">
+                   <select ng-model="item.matchSportCenter" ng-options="sportCenters.sportcenterID as sportCenters.sportcenterName for sportCenters in matchSportCenters"><option value='{{item.matchSportCenter}}'>{{item.matchSportCenter}}</option>
+                  </select>
+                  
+            </label>
+            </div>
+            <br> 
+             <div class="bar bar-header item item-input padding bar-stable custom-textarea-controll">
+                      <textarea rows="4" cols="50" placeholder="Match Overview" ng-class="allvalidation[7].validation" ng-model="item.overviewMatch">{{item.overviewMatch}}</textarea>
+                </div>
+            <br>
+            <div ng-repeat="comment in commentarray track by $index">
+            <div class="bar bar-header item item-input padding bar-stable custom-textarea-controll">
+                     <textarea rows="4" cols="50" placeholder="Comment On Match" ng-class="allvalidation[7].validation" ng-model="comment.commentDetail">{{comment.commentDetail}}</textarea>
+                </div>
+            </div>
+            <div class="bar bar-header item item-input padding bar-stable custom-textarea-controll">
+                      <textarea rows="4" cols="50" placeholder="Comment On Match" ng-class="allvalidation[7].validation" ng-model="item.commentMatch">{{item.commentMatch}}</textarea>
+                </div>
+            <br>
+        </form>
+        <button class="cus-login-btn button button-balanced  button-block icon ion-edit" id="signUp-button6" ng-click="editMatchsubmit(editMatch);"> {{'editmatcch' | translate}} </button>
+
+    </ion-content>
+</ion-view>

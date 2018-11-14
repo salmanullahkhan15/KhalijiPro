@@ -1,0 +1,26 @@
+<ion-view style="" title="Enter City" class="login-bg">
+<ion-nav-bar class="bar-balanced">
+        <ion-nav-back-button></ion-nav-back-button>
+         <ion-nav-buttons side="right">
+    </ion-nav-buttons>
+</ion-nav-bar>
+    <ion-content padding="true" style="background: url(img/bg/14.jpg) no-repeat center;background-size:cover;" class="cus-bg-drop manual-ios-statusbar-padding">
+        <form style="" >
+        <div class="list">
+			<br>
+            <br>
+            <br>
+			<br>
+            <div class="bar bar-header item item-input padding bar-stable custom-select-box">           
+            <label style="" name="nameCity" class="item item-input item-select" ng-class="allvalidation[1].validation">
+               <!-- <span class="input-label">City</span> -->
+               <select ng-model="enter.citydata" ng-options="catcity.city_id as catcity.city_name for catcity in citycategories"> 
+                 <option value="">Select City</option>
+    </select>
+            </label>
+            </div>
+        </div>
+        </form>
+        <button class="button button-balanced  button-block ion-checkmark" id="login-button1" ng-click="twitteremailandcity(enter);">Submit</a>
+    </ion-content>
+</ion-view>

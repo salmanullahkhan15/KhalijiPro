@@ -1,0 +1,31 @@
+<ion-view view-title="{{'awards' | translate}}" class="{{myClass}}">
+<ion-nav-bar class="bar-balanced {{myClass}}">
+   <ion-nav-buttons side="left" align-title="center">
+            <button class="button button-icon icon ion-android-arrow-back" ui-sref="menuslider.menu"></button>
+          </ion-nav-buttons>
+</ion-nav-bar>
+  <ion-content class="center no-right-pad matchlist-page cus-bg-drop" style="background: url(img/bg/14.jpg) no-repeat center;background-size:cover;">
+
+ <div class="list card" ng-repeat="item in items">
+    <div class="member-list-box">
+      <div class="member-list-top-de">
+        <span class="member-list-left"><img ng-src="{{item.clubImageUrl || 'img/photo.png'}}" class="img-circle img-responsive"></span>
+        <div class="member-list-right-de">
+          <br>
+          <span class="member-usr-name">{{'manofthematch' | translate}}</span>
+        
+          <br>
+           <span class="member-de-label" style="float: left;padding-right: 5px;margin: 2px 0 0 0;    padding-left: 20px;">{{'matchname' | translate}} :</span>
+          <span class="member-bold-txt" style="text-align: left;"> {{item.matchName}}</span>
+          <!-- <span class="member-location"><strong>Match Name :</strong> {{item.matchName}},</span> -->
+          <br>
+          <span class="member-de-label" style="float: left;padding-right: 5px;margin: 2px 0 0 0;    padding-left: 20px;">{{'clubname' | translate}} :</span>
+          <span class="member-bold-txt" style="text-align: left;"> {{item.clubName}}</span>
+         <!--  <span class="member-location"><strong>Club Name :</strong> {{item.clubName}}</span> -->
+        </div>
+      </div>
+      <div class="clearfix"></div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

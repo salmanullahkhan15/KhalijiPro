@@ -1,0 +1,133 @@
+<script>
+  $(".item.item-complex").click(function (e) {
+    $(this).addClass("active").siblings().removeClass("active");
+  });
+</script>
+<ion-side-menus enable-menu-with-back-views="true">
+  <!-- <ion-side-menu-content ng-class="isMenuOpen() ? 'menu-open' : ''"> -->
+  <ion-side-menu-content ng-class="isMenuOpen() ? 'menu-open' : ''">
+    <ion-nav-bar class="bar-balanced {{myClass}}">
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menusliderContent"></ion-nav-view>
+  </ion-side-menu-content>
+  <ion-side-menu side="left">
+    <ion-header-bar class="bar-balanced">
+      <h1 class="title">{{'khalijipro' | translate}}</h1>
+    </ion-header-bar>
+    <ion-content class="sidemenu-new-custom">
+      <ion-list class="side-menu-slider {{myClass}}">
+        <!--  <div class="top-statusbar"></div> -->
+        <!--         <div class="list no-margin" ng-if="menu.setting"> -->
+        <!--   <ion-item class="item-avatar item-icon-right"> -->
+        <ion-item>
+          <div style="" class="profile-image pull-left">
+            <img class="user-profile-img" ng-src="{{ item.avatar || 'img/photo.png'}}" ui-sref="registerProfile"></img>
+            <!-- <span class="gear-icon"><i class="icon ion-gear-b" ui-sref="registerProfile"></i></span> -->
+          </div>
+
+          <!--  <center><h3 style="margin-top: 10px;">{{item.username}}</h3></center> -->
+          <div class="profile-detail cus-css cus-new-css pb-0">
+            <div class="user-name">
+              <span>{{item.first_name}}</span>
+              <span>{{item.last_name}}</span>
+            </div>
+            <div>
+              <span class="usr-cou-city">
+                <img src="img/location-icon.png">{{item.citycategories}}</span>
+            </div>
+            <div>
+              <span class="usr-cou-city">
+                <img src="img/ranking-factor.png">{{'ranking_point' | translate}} {{item.ranking}}</span>
+            </div>
+            <div>
+              <span class="usr-cou-city edit-ic" ui-sref="registerProfile">
+                <img src="img/settings.png">{{'edit_profile' | translate}}</span>
+            </div>
+
+          </div>
+        </ion-item>
+
+
+        <!-- <ion-item menu-close href="#/menuslider/ranking" >
+              <div translate="rankings">
+                Rankings
+               </div>
+              </ion-item> -->
+
+
+        <ion-item menu-close href="#/menuslider/awards">
+          <div translate="awards">
+            Awards
+          </div>
+        </ion-item>
+
+        <!--  <ion-item menu-close href="#/menuslider/top-organizer">
+            <div translate="top_organizer">
+              Top Organizers
+            </div>
+            </ion-item>
+
+             <ion-item menu-close href="#/menuslider/top-players">
+             <div translate="top_player">
+              Top Players
+             </div>
+            </ion-item>
+
+            <ion-item menu-close href="#/menuslider/top-clubs">
+            <div translate="top_club">
+              Top Clubs
+            </div>
+            </ion-item>
+ -->
+        <ion-item menu-close href="#/menuslider/myfollowers">
+          <div translate="my_followers">
+            My Followers
+          </div>
+        </ion-item>
+
+        <ion-item menu-close href="#/menuslider/myfollowing">
+          <div translate="my_following">
+            Following
+          </div>
+        </ion-item>
+
+        <!--  <ion-item menu-close href="#/menuslider/clubsearchby">
+             <div translate="search_club">
+              Search Clubs
+             </div>
+            </ion-item> -->
+
+        <ion-item menu-close href="#/menuslider/partnersadv">
+          <div translate="partners">
+            Partners
+          </div>
+        </ion-item>
+
+        <ion-item menu-close href="#/" ng-click="logout()">
+          <div translate="logout">
+            LogOut
+          </div>
+        </ion-item>
+
+        <!--  <ion-item menu-close href="#/menuslider/menu">
+             
+            </ion-item> -->
+        <!-- </div> -->
+        <!--  <ion-content ng-class="logso">
+            <div class="list menu-set">
+                <ion-item nav-clear menu-close class="item item-icon-left" ui-sref="app.{{menu.link}}({id:menu.typeid})" ui-sref-active="bordered" ng-repeat="menu in menudata">
+                    <i class="icon {{menu.icon}}"></i>{{menu.name}}
+                </ion-item>
+                <ion-item nav-clear menu-close class="item item-icon-left item-complex" ng-click="logout()" ui-sref-active="bordered" ng-if="menu.setting">
+                    <div class="item-content"><i class="icon ln-arrow-right2"></i>Logout</div>
+                </ion-item>
+            </div>
+        </ion-content> -->
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

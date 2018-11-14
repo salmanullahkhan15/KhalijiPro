@@ -1,0 +1,70 @@
+<ion-view view-title="{{'memberlist' | translate}}" class="{{myClass}}">
+<ion-nav-bar class="bar-balanced {{myClass}}">
+   <ion-nav-buttons side="left" align-title="center">
+            <button class="button button-icon icon ion-android-arrow-back" ui-sref="spclublist"></button>
+          </ion-nav-buttons>
+</ion-nav-bar>
+  <ion-content class="center no-right-pad matchlist-page cus-bg-drop" style="background: url(img/bg/14.jpg) no-repeat center;background-size:cover;">
+  
+    <!-- <div class="list card" ng-repeat="item in items">
+      <div class="opacity-back">
+      <div class="match-list-row">
+        <div class="match-image pull-left">
+          <img ng-src="{{item.get_avatar || 'img/photo.png'}}" class="img-circle">
+        </div>
+        <div class="match-right-detail">
+          <div class="left-inner pull-left">
+            <div class="match-title">Name {{item.nickname}}</div>
+            <div class="match-location">City {{item.City}}</div>
+            <div class="match-location">PLayed {{item.getPlayersPlayed}}</div>
+            <div class="match-location">Won {{item.getPlayerswon}}</div>
+            <div class="match-location">Ties {{item.getPlayerstie}}</div>
+            <div class="match-location">Lost {{item.getPlayerslost}}</div>
+            
+            
+          </div>
+  <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  </div> -->
+ <div class="list card" ng-repeat="item in items" ng-click="getplayerdetails(item.getUserID);">
+    <div class="member-list-box">
+      <div class="member-list-top-de">
+        <span class="member-list-left"><img ng-src="{{item.get_avatar || 'img/photo.png'}}" class="img-circle img-responsive"></span>
+        <div class="member-list-right-de">
+          <span class="member-usr-name">{{item.nickname}}</span>
+          <span class="member-location">{{item.City}}</span>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <div class="member-list-bottom-de">
+        <div class="col-md-3 col-sm-3 col-xs-3">
+          <span class="member-de-label">{{'playedmatch' | translate}}</span>
+          <span class="member-bold-txt">{{item.getPlayersPlayed}}</span>
+        </div>
+        
+        <div class="col-md-3 col-sm-3 col-xs-3">
+          <span class="member-de-label">{{'won' | translate}}</span>
+          <span class="member-bold-txt">{{item.getPlayerswon}}</span>
+        </div>
+        
+        <div class="col-md-3 col-sm-3 col-xs-3">
+          <span class="member-de-label">{{'tied' | translate}}</span>
+          <span class="member-bold-txt">{{item.getPlayerstie}}</span>
+        </div>
+
+        <div class="col-md-3 col-sm-3 col-xs-3">
+          <span class="member-de-label">{{'lost' | translate}}</span>
+          <span class="member-bold-txt">{{item.getPlayerslost}}</span>
+        </div>
+
+      <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+
+  </ion-content>
+</ion-view>

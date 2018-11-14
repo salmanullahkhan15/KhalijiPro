@@ -1,0 +1,131 @@
+<ion-view view-title="{{'ranking' | translate}}" class="{{myClass}}">
+<ion-nav-bar class="bar-balanced {{myClass}}">
+   <ion-nav-buttons side="left" align-title="center">
+            <button class="button button-icon icon ion-android-arrow-back" ui-sref="menuslider.menu"></button>
+          </ion-nav-buttons>
+</ion-nav-bar>
+  <ion-content class="center cus-bg-drop" style="background: url(img/bg/14.jpg) no-repeat center;background-size:cover;">
+  <style type="text/css">
+    .member-list-top-de {
+      border-bottom: none;
+    } 
+    .member-list-box {
+      background: transparent;
+    }
+    .member-usr-name {
+        background: #de8d07 none repeat scroll 0 0;
+        border: 2px solid;
+        border-radius: 81px !important;
+        box-shadow: 0 0 2px 2px #de8d07;
+        color: #ffffff;
+        display: inline-block;
+        font-size: 24px;
+        font-weight: bold;
+        height: 50px;
+        padding: 10px 0;
+        text-align: center;
+        width: 50px;
+        margin: 10px auto;
+        line-height: 1.2;
+    }
+    .grey-circle {
+      background-color: #A8A8A8;
+      box-shadow: 0 0 2px 2px #a8a8a8;
+    }
+    span.red-txt {
+      margin-top: 25px;
+      display: inline-block;
+      color: #E55A4C;
+      font-weight: bold;
+    }
+    .ranking-row {
+      background-color: #D0D1D6;
+      margin-bottom: 15px;
+    }
+    .member-list-right-de .title {
+      padding: 5px 10px;
+      border-bottom: 1px solid #A8A8A8;
+    }
+    .member-list-right-de .title p {
+      margin-bottom: 0;
+    }
+    .stickey-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #D1D2D7;
+      padding: 5px 10px;
+      z-index: 9999;
+    }
+    .stickey-header p {
+      margin-bottom: 0;
+    }
+    .body-content {
+      padding-top: 50px;
+    }
+  </style>
+  <div class="text-center stickey-header">
+    <p>{{item.countedSupervisor}} {{'orgareorging' | translate}} {{item.countedPlayedTotalMatch}} {{'gamthawillbplayby' | translate}} {{item.countedPlayer}} {{'playerrankingline' | translate}}</p>
+  </div>
+  <div class="padding matchlist-page body-content">
+ <div class="list card">
+    <div class="member-list-box">
+      <div class="member-list-top-de">
+        <div class="member-list-right-de">
+          <div class="text-center ranking-row">
+            <div class="text-left title">
+              <p>{{'yourperrankis' | translate}}</p>
+            </div>
+            <div class="clearfix">
+              <div class="col-xs-4">
+                <span class="member-usr-name">{{item.currentPlayerPersonalRanking}}</span>
+              </div>
+              <div class="col-xs-4">
+                <span class="red-txt">{{'outof' | translate}}</span>
+              </div>
+              <div class="col-xs-4">
+                <span  class="member-usr-name grey-circle">{{item.countedPlayer}}</span>
+              </div>
+            </div>
+          </div>
+          <div class="text-center ranking-row">
+            <div class="text-left title">
+              <p>{{'youhaorgmatch' | translate}}</p>
+            </div>
+            <div class="clearfix">
+              <div class="col-xs-4">
+                <span class="member-usr-name">{{item.countedPlayedMatchOrganise}}</span>
+              </div>
+              <div class="col-xs-4">
+                <span class="red-txt">{{'outof' | translate}}</span>
+              </div>
+              <div class="col-xs-4">
+                <span class="member-usr-name grey-circle">{{item.countedPlayedTotalMatch}}</span>
+              </div>
+            </div>
+          </div>
+          <div class="text-center ranking-row">
+            <div class="text-left title">
+              <p>{{'youhacreaclubs' | translate}}</p>
+            </div>
+            <div class="clearfix">
+              <div class="col-xs-4">
+                <span class="member-usr-name">{{item.countedMyClubCreated}}</span>
+              </div>
+              <div class="col-xs-4">
+                <span class="red-txt">{{'outof' | translate}}</span>
+              </div>
+              <div class="col-xs-4">
+                <span class="member-usr-name grey-circle">{{item.countedMyTotalClub}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+  </ion-content>
+</ion-view>

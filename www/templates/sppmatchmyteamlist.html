@@ -1,0 +1,102 @@
+<ion-view view-title="{{'myteamlist' | translate}}" class="{{myClass}}">
+<ion-nav-bar class="bar-balanced {{myClass}}">
+   <ion-nav-buttons side="left" align-title="center">
+            <button class="button button-icon icon ion-android-arrow-back" ui-sref="sppmatchmyteam"></button>
+          </ion-nav-buttons>
+</ion-nav-bar>
+  <ion-content class="center no-right-pad matchlist-page cus-bg-drop" style="background: url(img/bg/14.jpg) no-repeat center;background-size:cover;">
+
+
+ <div class="list card" ng-repeat="itemdaydate in spmatchBy">
+   
+    <div class="col-md-4 col-sm-4 col-xs-12 responsive-pad">
+    <div class="clubarea-main-box bg-white">
+      <div class="clubarea-detail1">
+        <div class="">
+          <div class=frame>
+              <span class="helper"></span>
+                <img ng-src="{{itemdaydate.clubImageUrl || 'img/photo.png'}}">
+          </div>
+             
+        <!--   <span class="club-name">{{itemdaydate.getMatchName}}</span> -->
+          <span class="image-shadow"></span>
+        </div>
+      </div>
+      
+      <div class="clubarea-detail2">
+        <div class="club-area-played-match" ng-show="{{itemdaydate.teamName != 'null'}}">{{itemdaydate.teamName}} {{'teamfor' | translate}} : {{itemdaydate.getMatchName}}</div>
+        <div class="club-area-played-match" ng-show="{{itemdaydate.teamName == 'null'}}">{{'createteamfor' | translate}} : {{itemdaydate.getMatchName}}</div>
+      </div>
+    </div>
+  </div>
+
+   <div class="team-create-name">
+    
+                <label class="pl-default-teamname" ng-show="{{itemdaydate.teamName != 'null'}}">{{'teamname' | translate}} :  {{itemdaydate.teamName}}</label>
+    </div>
+
+    <div ng-repeat="inneritem in itemdaydate.player_list track by $index">
+
+    <div class="member-list-box clear position-relative">
+      <div class="member-list-top-de">
+        <span class="member-list-left"><img ng-src="{{inneritem.get_avatar || 'img/photo.png'}}" class="img-circle img-responsive"></span>
+        <div class="member-list-right-de">
+          <span class="member-usr-name">{{inneritem.nickname}}</span>
+          <span class="member-location">{{inneritem.City}}</span>
+          <span class="member-location">{{inneritem.getDataClubName}}</span>
+          
+          <div class="pl-ap-rj-btn">
+
+          <button class="join-btn" href="#" ng-show="{{inneritem.Approve != Approve}}" ng-click="getApproveButton(inneritem.getUserID, inneritem.clubID, inneritem.matchID);" ng-class="{'button-positive': inneritem.Approve == 'Approve'}">{{inneritem.Approve}}</button>
+
+          <button class="icon ion-checkmark-circled reject-pl-btn"  href="#" ng-show="{{inneritem.Approved != Approved}}" value=""></button>
+
+          <button class="icon icon ion-close-circled reject-pl-btn" ng-show="{{inneritem.Reject != Reject}}"  href="#" ng-click="getApproveButton(inneritem.getUserID, inneritem.clubID, inneritem.matchID);" value=""></button>
+
+          </div>
+          
+
+
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <div class="member-list-bottom-de">
+        <div class="col-md-3 col-sm-3 col-xs-3">
+          <span class="member-de-label">{{'playedmatch' | translate}}</span>
+          <span class="member-bold-txt">{{inneritem.getPlayersPlayed}}</span>
+        </div>
+        
+        <div class="col-md-3 col-sm-3 col-xs-3">
+          <span class="member-de-label">{{'won' | translate}}</span>
+          <span class="member-bold-txt">{{inneritem.getPlayerswon}}</span>
+        </div>
+        
+        <div class="col-md-3 col-sm-3 col-xs-3">
+          <span class="member-de-label">{{'tied' | translate}}</span>
+          <span class="member-bold-txt">{{inneritem.getPlayerstie}}</span>
+        </div>
+
+         <div class="col-md-3 col-sm-3 col-xs-3">
+          <span class="member-de-label">{{'lost' | translate}}</span>
+          <span class="member-bold-txt">{{inneritem.getPlayerslost}}</span>
+        </div>
+
+      <div class="clearfix"></div>
+      </div>
+    </div>
+
+    
+ 
+  </div>
+  <div class="team-create-name">
+           <input placeholder="{{'teamname' | translate}}" ng-hide="{{itemdaydate.teamName != 'null'}}" type="text" ng-model="team.teamname"  ng-class="allvalidation[0].validation" class="team-input">
+                <button class="cus-login-btn button button-balanced  button-block icon ion-ios-personadd-outline" id="signUp-button6" ng-hide="{{itemdaydate.teamName != 'null'}}" ng-click="createTeamNamesubmit(itemdaydate.matchID,itemdaydate.clubID);">{{'createteam' | translate}}</button>
+  </div>
+
+  </div>
+   
+   <div id="addInputArea">
+
+  </div>
+  </ion-content>
+</ion-view>

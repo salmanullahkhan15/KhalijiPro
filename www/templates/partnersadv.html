@@ -1,0 +1,19 @@
+<ion-view style="" id="page9" view-title="{{'partners' | translate}}" class="{{myClass}}">
+<ion-nav-bar class="bar-balanced {{myClass}}">
+         <ion-nav-buttons side="left" align-title="center">
+            <button class="button button-icon icon ion-android-arrow-back" ui-sref="menuslider.menu"></button>
+          </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-content class="has-header about-us-screen cus-bg-drop" padding="true" style="background: url(img/bg/14.jpg) no-repeat center;background-size:cover;">
+ <div class="list">
+     <div ng-repeat="item in items">
+        <center><img ng-src="{{item.partnersPath || 'img/photo.png'}}" style="border-radius: 180px;
+          background: rgba(255, 255, 255, 0.8);
+          height: 170px;
+          width: 170px;"></img></center>
+      <!--  <div class="stable aboutus-detail">{{item.khalijiPROName}}</div> -->
+            </div>
+  </div>
+</div>
+</ion-content>
+</ion-view>
